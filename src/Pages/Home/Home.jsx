@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import Woman from "../../assets/woman.png";
 import Woman2 from "../../assets/woman2.png";
 import Speak from "../../assets/speaks.png";
@@ -12,25 +11,26 @@ import Layout from "../../component/layout";
 const Home = () => {
   return (
     <Layout>
-      <div className="bg-[#dcd3ca]">
+      <div className="bg-[#dcd3ca] w-full">
         <div className="min-h-screen relative lg:pb-50">
-          <div className="flex gap-10 lg:gap-0">
-            <div className="relative">
-              <img
+          <div className="flex gap-10 lg:gap-0 w-full">
+            <div className="relative bg-amber-600">
+              {/* <img
                 src={Speak}
                 className="absolute top-5 md:top-10 w-[30%] md:w-[25%] left-2 md:left-10"
-              />
+              /> */}
+              {/* <p className="absolute text-white text-5xl font-bold text-center [text-shadow:0_4px_10px_rgba(0,0,0,0.8)] top-5 md:top-10 w-[30%] md:w-[25%] left-10 md:left-10">BRUCH & PRAY</p> */}
 
               <img
-                src={Woman}
-                className="w-[50rem] md:w-[23rem] lg:w-[38rem] h-[60vh] lg:h-[100vh] object-cover"
+                src="/people.jpeg"
+                className="w-[60%] md:w-[23rem] lg:w-[38rem] h-[60vh] lg:h-[100vh] object-cover"
               />
 
-              <h1 className="absolute top-[10%] md:top-[20%] lg:top-[40%] left-15 md:left-[15rem] lg:left-100 font-[Bebas Neue] text-[#d84136] text-5xl md:text-6xl lg:text-8xl">
+              {/* <h1 className="absolute top-[10%] md:top-[20%] lg:top-[40%] left-15 md:left-[15rem] lg:left-100 font-[Bebas Neue] text-[#d84136] text-5xl md:text-6xl lg:text-8xl">
                 IGNITING
                 <br />
                 <span className="inline-block ml-25">PURPOSE</span>
-              </h1>
+              </h1> */}
             </div>
 
             <div>
@@ -43,8 +43,8 @@ const Home = () => {
 
               <div className="flex items-center justify-center h-screen">
                 <img
-                  src={Woman2}
-                  className="w-[40rem] md:w-[13rem] lg:w-[50%] h-[15rem] md:h-[300px] lg:h-[500px] object-cover mt-40 md:mt-0 lg:mt-60 md:ml-[8rem] rounded-xl"
+                  src="/bannerImage.jpeg"
+                  className=" md:w-[13rem] lg:w-full h-[15rem] md:h-[300px] lg:h-[500px] object-cover md:mt-0 lg:ml-[100%] mt-60 md:ml-[8rem] rounded-xl"
                 />
               </div>
             </div>
