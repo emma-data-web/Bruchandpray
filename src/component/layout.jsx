@@ -10,13 +10,13 @@ const layout = ({ children }) => {
   return (
     <div>
       <div>
-        <nav className="absolute top-10 right-6 md:flex gap-5 mb-10 text-[12px] text-[#d84136] hidden">
-          <a href="#">HOME</a>
-          <a href="#">ABOUT</a>
-          <a href="#">VOICE</a>
-          <a href="#">BOOK</a>
-          <a href="#">SHOP</a>
-          <a href="#">CONTACT</a>
+        <nav className="absolute bottom-12 right-6 md:flex gap-5 mb-10 text-[12px] text-[#d84136] hidden z-20 rotate-90 origin-top-right">
+          <a href="/" className="cursor-pointer">HOME</a>
+          <a href="/mission" className="cursor-pointer">MISSION STATEMENT</a>
+          <a href="/purpose" className="cursor-pointer">PURPOSE AND OUTREACH</a>
+          <a href="/book" className="cursor-pointer">BOOK</a>
+          <a href="/events" className="cursor-pointer">EVENTS</a>
+          <a href="/about" className="cursor-pointer">ABOUT FOUNDER</a>
         </nav>
 
         <button
