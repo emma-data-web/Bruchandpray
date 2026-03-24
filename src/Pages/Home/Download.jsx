@@ -1,50 +1,62 @@
-import React from "react";
+// import React from "react";
 import Computer from "../../assets/computer.png";
 import Angela from "../../assets/angela.png";
 import Bible from "../../assets/bible.png";
 
 const Download = () => {
   return (
-    <div className="pt-20 px-5 md:px-0">
-      <div className="flex flex-col items-center justify-center">
-        <div className="text-center text-[#d84136] translate-y-5 md:translate-y-15">
-          <h1 className="text-6xl md:text-8xl">FREE</h1>
-          <h1 className="text-6xl md:text-8xl">DOWNLOAD</h1>
+    <div className="bg-[#dcd3ca] py-24 px-6 overflow-hidden">
+      {/* HEADER STACK */}
+      <div className="relative flex flex-col items-center">
+        <div className="z-20 text-center pointer-events-none">
+          <h1 className="lg:text-5xl text-[#d84136] font-bold">FREE</h1>
+          <h1 className="lg:text-5xl text-[#2e2c2b] ml-10 font-bold">DOWNLOAD</h1>
         </div>
 
-        <img src={Computer} className="w-[85%] md:w-[65%] h-[20rem] md:h-[30rem] object-cover" />
+        <div className="z-10 w-full max-w-4xl transform hover:scale-[1.02] transition-transform duration-500">
+          <img 
+            src={Computer} 
+            className="w-full h-[400px] md:h-[600px] object-cover shadow-2xl rounded-sm border-8 border-white/20" 
+            alt="Guide Mockup"
+          />
+        </div>
 
-        <div className="pt-15 flex flex-col items-center justify-center space-y-5 text-[#2e2c35]">
-          <h1 className="text-xl ">30 BIBLICAL AFFIRMATIONS</h1>
-          <p className="lg:w-[50rem] md:w-[30rem] text-center">
-            Grab your 13 page guide and renew your mind to the truth of God's
-            word through biblical affirmations. Learn to see yourself the way
-            God does so you can live an empowered life and activate your
-            God-given purpose.
+        {/* CONTENT CARD */}
+        <div className="mt-16 text-center max-w-2xl bg-white/30 backdrop-blur-sm p-10 rounded-lg shadow-sm border border-white/40">
+          <h3 className="text-3xl md:text-4xl text-[#2e2c2b] mb-4 tracking-wider">
+            30 BIBLICAL AFFIRMATIONS
+          </h3>
+          <p className="text-lg text-[#2e2c2b] mb-8 leading-relaxed">
+            Grab your 13-page guide and renew your mind to the truth of God&apos;s
+            word. Learn to see yourself the way God does so you can live an 
+            empowered life and activate your purpose.
           </p>
-          <button className="bg-[#d84136] py-3 w-60 rounded-lg text-white text-sm mb-20">
-            DOWNLOAD NOW
+          <button className="bg-[#d84136] hover:bg-[#b0342b] text-white px-12 py-4 font-bold tracking-[0.2em] rounded-full transition-all shadow-lg uppercase">
+            Get the Guide
           </button>
         </div>
       </div>
 
-      <div className="relative pt-20 flex items-center justify-center pb-20">
-        <img
-          src={Angela}
-          className="absolute top-0 right-0 lg:right-[8rem] h-[10rem] md:h-[10rem] lg:h-[15rem] w-[50%] md:w-[30%] lg:w-[20%] object-cover rounded-lg z-0 opacity-80"
-        />
+      {/* TESTIMONIAL PULL-QUOTE */}
+      <div className="relative mt-20 max-w-5xl mx-auto py-20 flex flex-col items-center">
+        {/* Floating Accent Images */}
+        <img src={Angela} className="absolute -top-10 right-0 w-32 md:w-48 h-32 md:h-48 rounded-full object-cover grayscale opacity-40 -rotate-12" />
+        <img src={Bible} className="absolute -bottom-10 left-0 w-24 md:w-40 h-24 md:h-40 rounded-lg object-cover opacity-30 rotate-12" />
 
-        <p className='font-["Playfair Display"] text-3xl md:text-4xl lg:text-5xl text-center lg:max-w-[70%] text-[#2e2c2b] leading-snug z-10 relative'>
-          "The Atmosphere Completely Shifted As She Allowed The Holy Spirit To
-          Use Her And Resonate In The Hearts Of Every Woman"
-        </p>
-
-        <img
-          src={Bible}
-          className="absolute bottom-15 left-0 lg:left-[8rem] h-[7rem] w-[40%] md:w-[20%] lg:w-[13%] object-cover rounded-2xl z-0 opacity-80"
-        />
-
-        <p className="absolute bottom-7 text-lg md:text-xl text-[#2e2c2b] text-center">— ANGELA, FOUNDER OF SHE.IS</p>
+        <div className="relative z-10 text-center px-4">
+          <span className="text-6xl font-serif text-[#d84136] opacity-50 block mb-4">“</span>
+          <p className='font-["Playfair_Display"] italic text-2xl md:text-4xl lg:text-5xl text-[#2e2c2b] leading-tight max-w-4xl mx-auto'>
+            The atmosphere completely shifted as she allowed the Holy Spirit to
+            use her and resonate in the hearts of every woman.
+          </p>
+          <div className="mt-8 flex items-center justify-center gap-4">
+            <div className="h-[1px] w-12 bg-[#d84136]"></div>
+            <p className="text-xl tracking-widest text-[#2e2c2b]">
+              ANGELA, FOUNDER OF BRUNCH AND PRAY
+            </p>
+            <div className="h-[1px] w-12 bg-[#d84136]"></div>
+          </div>
+        </div>
       </div>
     </div>
   );
