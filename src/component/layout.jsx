@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
       {/* --- DESKTOP SIDE NAVIGATION (STUCK TO RIGHT) --- */}
       <nav className="fixed bg-white border border-gray-100 py-4 rounded-full backdrop:blur-lg left-1/2 -translate-x-1/2 my-4 shadow-2xl px-9 hidden lg:flex gap-16 text-[11px] tracking-[0.1em] text-[#d84136] z-40 font-bold transition-opacity hover:opacity-100 opacity-90 items-center w-[70%] justify-center">
         <a href="/" className="hover:text-[#2e2c2b] transition-colors overflow-y-hidden">
-          <img src="/logo-white.jpeg" alt="logo" className="w-16 h-16"/>
+          <img src="/logo-white.jpeg" alt="logo" className="w-12 h-10"/>
         </a>
         <a href="/mission" className="hover:text-[#2e2c2b] transition-colors whitespace-nowrap">MISSION STATEMENT</a>
         <a href="/purpose" className="hover:text-[#2e2c2b] transition-colors whitespace-nowrap">PURPOSE & OUTREACH</a>
