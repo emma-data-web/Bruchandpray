@@ -8,9 +8,9 @@ const Layout = ({ children }) => {
   return (
     <div className="bg-[#dcd3ca] min-h-screen font-sans text-[#2e2c2b] w-full">
       {/* --- DESKTOP SIDE NAVIGATION (STUCK TO RIGHT) --- */}
-      <nav className="fixed bg-white border border-gray-100 py-4 rounded-full backdrop:blur-lg left-1/2 -translate-x-1/2 my-4 shadow-2xl px-9 hidden lg:flex gap-8 text-[11px] tracking-[0.1em] text-[#d84136] z-40 font-bold transition-opacity hover:opacity-100 opacity-90 items-center">
-        <a href="/" className="hover:text-[#2e2c2b] transition-colors">
-          <img src="/logo-white.jpeg" alt="logo" className="w-12 h-12"/>
+      <nav className="fixed bg-white border border-gray-100 py-4 rounded-full backdrop:blur-lg left-1/2 -translate-x-1/2 my-4 shadow-2xl px-9 hidden lg:flex gap-16 text-[11px] tracking-[0.1em] text-[#d84136] z-40 font-bold transition-opacity hover:opacity-100 opacity-90 items-center w-[70%] justify-center">
+        <a href="/" className="hover:text-[#2e2c2b] transition-colors overflow-y-hidden">
+          <img src="/logo-white.jpeg" alt="logo" className="w-16 h-16"/>
         </a>
         <a href="/mission" className="hover:text-[#2e2c2b] transition-colors whitespace-nowrap">MISSION STATEMENT</a>
         <a href="/purpose" className="hover:text-[#2e2c2b] transition-colors whitespace-nowrap">PURPOSE & OUTREACH</a>
@@ -19,12 +19,15 @@ const Layout = ({ children }) => {
       </nav>
 
       {/* --- MOBILE HAMBURGER --- */}
-      <button
-        className="fixed top-8 right-6 text-4xl text-[#d84136] md:hidden z-50 bg-white/20 backdrop-blur-md p-2 rounded-full"
-        onClick={() => setMenuOpen(true)}
+      <div
+        className="fixed top-3 px-4 text-4xl text-[#d84136] md:hidden z-50 bg-white/20 backdrop-blur-md p-2 rounded-full flex items-center justify-between w-full"
       >
-        <IoMenu />
-      </button>
+        <a href="/" className="hover:text-[#2e2c2b] transition-colors">
+          <img src="/logo-white.jpeg" alt="logo" className="w-12 h-12"/>
+        </a>
+        <IoMenu 
+        onClick={() => setMenuOpen(true)} />
+      </div>
 
       {/* --- MOBILE OVERLAY MENU --- */}
       {menuOpen && (
@@ -38,7 +41,7 @@ const Layout = ({ children }) => {
           
           <div className="flex flex-col gap-6 text-center">
             <h2 className="text-[#d84136] text-3xl mb-4 tracking-widest">MENU</h2>
-            {["HOME", "ABOUT", "VOICE", "BOOK", "SHOP", "CONTACT"].map((link) => (
+            {["HOME", "ABOUT", "MISSION", "PURPOSE", "BOOK"].map((link) => (
               <a
                 key={link}
                 href={`/${link.toLowerCase()}`}
