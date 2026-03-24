@@ -1,31 +1,37 @@
 // import React from "react";
-import Img1 from "../../assets/img1.png";
+// import Img1 from "../../assets/img1.png";
 import Img2 from "../../assets/img2.png";
 
 const Mariela = () => {
   return (
-    <section className="py-20 bg-[#dcd3ca]">
-      <div className="relative h-[500px] md:h-[700px] flex justify-center items-center">
-        {/* The "Backdrop" Text */}
-        <h1 className="absolute font-['Bebas_Neue'] text-[12rem] md:text-[25rem] text-white/40 leading-none select-none">
-          BRUNCH
-        </h1>
+    <section className="py-32 px-6 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         
-        {/* Floating Images */}
-        <div className="relative z-10 flex items-center justify-center w-full">
-           <img src={Img2} className="w-[250px] md:w-[450px] shadow-2xl z-10" alt="Comfort 1" />
-           <img src={Img1} className="w-[150px] md:w-[250px] absolute -bottom-10 right-[10%] md:right-[25%] shadow-2xl z-20 border-8 border-[#dcd3ca]" alt="Comfort 2" />
+        {/* Modern Image Frame */}
+        <div className="relative group">
+          <div className="absolute -inset-4 border border-[#d84136]/30 lg:rounded-[60px] rounded-2xl group-hover:inset-0 transition-all duration-500" />
+          <img 
+            src={Img2} 
+            className="lg:rounded-[60px] rounded-2xl w-full h-[600px] object-cover shadow-2xl relative z-10" 
+          />
         </div>
-      </div>
 
-      <div className="max-w-xl mx-auto text-center px-6 mt-20">
-        <h3 className="text-4xl mb-4">WHAT&apos;S UP? I&apos;M COMFORT</h3>
-        <p className="text-lg leading-relaxed mb-8">
-           I&apos;m an author, coach, preacher and spoken word artist who is dedicated to helping you be the best version of yourself and walk in your God-given purpose.
-        </p>
-        <button className="border-2 border-[#2e2c2b] px-10 py-3 font-bold hover:bg-[#2e2c2b] hover:text-white transition-colors">
-          LEARN MORE
-        </button>
+        <div>
+          <span className="text-[#d84136] font-bold tracking-[0.4em] uppercase text-sm">Founder</span>
+          <h2 className="font-['Playfair_Display'] text-6xl md:text-8xl text-[#2e2c2b] mt-4 mb-8 leading-tight">
+            Meet Comfort Azubike
+          </h2>
+          <div className="space-y-6 text-[#2e2c2b]/80 text-lg leading-relaxed">
+            <p>I am dedicated to helping you be the best version of yourself and walk in your God-given purpose.</p>
+            <p className="italic border-l-4 border-[#d84136] pl-6 font-serif">
+              &quot;When women gather to pray, the atmosphere shifts and purpose is ignited.&quot;
+            </p>
+          </div>
+          <button className="mt-12 bg-[#2e2c2b] hover:bg-[#d84136] text-white px-12 py-4 rounded-full transition-all flex items-center gap-4 group">
+            LEARN MORE <span className="group-hover:translate-x-2 transition-transform">→</span>
+          </button>
+        </div>
+
       </div>
     </section>
   );

@@ -31,7 +31,7 @@ const Bust = () => {
           </div>
 
           {/* YouTube Card - Elevated slightly */}
-          <div className='group cursor-pointer md:-mt-12'>
+          <div className='group cursor-pointer md:-mt-12 rounded-3xl'>
             <div className="overflow-hidden relative h-[500px] border-x border-[#d84136]/30 px-4">
               <img 
                 src={Woman3} 

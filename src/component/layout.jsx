@@ -40,7 +40,7 @@ const Layout = ({ children }) => {
               <a
                 key={link}
                 href={`/${link.toLowerCase()}`}
-                className="text-5xl hover:text-[#d84136] transition-all tracking-wider"
+                className="text-xl hover:text-[#d84136] transition-all tracking-wider"
                 onClick={() => setMenuOpen(false)}
               >
                 {link}
@@ -54,35 +54,32 @@ const Layout = ({ children }) => {
       <main className="relative">{children}</main>
 
       {/* --- REFINED FOOTER --- */}
-      <footer className="bg-black w-full pt-32 pb-12 text-[#dcd3ca] mt-20 border-t border-[#d84136]/20">
-        <div className="max-w-7xl mx-auto px-10">
+      <footer className="bg-black w-full lg:pt-32 pt-4 pb-4 lg:pb-12 text-[#dcd3ca] border-t border-[#d84136]/20">
+        <div className="max-w-7xl mx-auto lg:px-10 px-2">
           
-          <div className="flex flex-col lg:grid lg:grid-cols-3 items-center gap-16 mb-24">
+          <div className="flex flex-col lg:grid lg:grid-cols-3 lg:items-center gap-16 mb-24">
             
             {/* Left Stack */}
-            <div className="flex flex-col gap-3 text-2xl tracking-[0.2em] items-center lg:items-start">
+            <div className="flex flex-col gap-3 text-sm tracking-[0.2em] items-start">
               <a href="/" className="hover:text-[#d84136] transition-colors">HOME</a>
               <a href="/mission" className="hover:text-[#d84136] transition-colors">MISSION STATEMENT</a>
-              <a href="/book" className="hover:text-[#d84136] transition-colors">BOOKS</a>
-              {/* <a href="/about" className="hover:text-[#d84136] transition-colors">ABOUT</a> */}
+              <a href="/book" className="hover:text-[#d84136] transition-colors">BOOKS</a><a href="/freebie" className="hover:text-[#d84136] transition-colors lg:hidden flex">PURPOSE & OUTREACH</a>
+              <a href="/shop" className="hover:text-[#d84136] transition-colors lg:hidden flex">ABOUT FOUNDER</a>
             </div>
 
             {/* Middle Branding */}
-            <div className="flex flex-col items-center lg:border-x border-[#dcd3ca] px-10 py-4">
-              {/* <h1 className="text-[#d84136] text-5xl md:text-6xl tracking-[0.1em] text-center leading-none mb-6">
-                BRUNCH AND PRAY
-              </h1> */}
-              <img src="/logo-black.jpeg" />
+            <div className="flex flex-col lg:items-center lg:border-x border-[#dcd3ca] lg:px-10 py-4">
+              <img src="/logo-black.jpeg" className="w-30"/>
               <div className="flex items-center gap-6 text-2xl">
                 <FaFacebookF className="cursor-pointer hover:text-white transition-all hover:-translate-y-1" />
-                <FaInstagram className="cursor-pointer hover:text-white transition-all hover:-translate-y-1" />
+                <a href="https://instagram.com/brunchandpray"><FaInstagram className="cursor-pointer hover:text-white transition-all hover:-translate-y-1" /></a>
                 <FaPinterestP className="cursor-pointer hover:text-white transition-all hover:-translate-y-1" />
                 <IoMailOutline className="cursor-pointer hover:text-white transition-all hover:-translate-y-1" />
               </div>
             </div>
 
             {/* Right Stack */}
-            <div className="flex flex-col gap-3 text-2xl tracking-[0.2em] items-center lg:items-end text-right">
+            <div className="lg:flex hidden flex-col gap-3 text-sm tracking-[0.2em] items-center lg:items-end text-right">
               <a href="/freebie" className="hover:text-[#d84136] transition-colors">PURPOSE & OUTREACH</a>
               <a href="/shop" className="hover:text-[#d84136] transition-colors">ABOUT FOUNDER</a>
               {/* <a href="/contact" className="hover:text-[#d84136] transition-colors">CONTACT</a> */}

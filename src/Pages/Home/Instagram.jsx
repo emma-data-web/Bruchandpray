@@ -16,11 +16,11 @@ const Instagram = () => {
       </h1>
 
       <div className='relative z-10 text-center mb-12'>
-        <p className='text-[#d84136] font-bold tracking-[0.4em] text-sm md:text-base uppercase pb-2'>
+        <p className='text-[#d84136] font-bold lg:tracking-[0.4em] tracking-[0.1em] text-sm md:text-base uppercase pb-2'>
           Follow the Journey
         </p>
-        <h2 className='text-6xl md:text-8xl lg:text-5xl text-[#2e2c2b] leading-tight'>
-          @SHESPEAKSFIRECO
+        <h2 className='text-3xl lg:text-5xl text-[#2e2c2b] font-semibold leading-tight'>
+          @BRUNCHANDPRAY
         </h2>
       </div>
 
@@ -30,15 +30,17 @@ const Instagram = () => {
           <div 
             key={index} 
             className={`
-              relative group cursor-pointer overflow-hidden shadow-xl transition-all duration-500 hover:-translate-y-4
+              relative group cursor-pointer overflow-hidden rounded-full shadow-xl transition-all duration-500 hover:-translate-y-4
               w-[140px] h-[140px] md:w-[200px] md:h-[200px] lg:w-[240px] lg:h-[240px]
-              ${index % 2 === 0 ? 'mt-0' : 'mt-8 lg:mt-12'} // Creates a "Staggered" look
+              ${index % 2 === 0 ? 'mt-0' : 'mt-8 lg:mt-12'}
               ${index > 2 ? 'hidden md:block' : ''}
             `}
           >
             {/* Hover Overlay */}
             <div className='absolute inset-0 bg-[#d84136]/40 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center'>
-               <span className='text-white font-bold tracking-widest text-xs uppercase border border-white p-2'>View Post</span>
+              <span className='text-white font-bold tracking-widest text-xs uppercase border border-white p-2'>
+                View Post
+              </span>
             </div>
             
             <img 
@@ -52,10 +54,10 @@ const Instagram = () => {
 
       {/* VIEW ALL BUTTON */}
       <a 
-        href="https://instagram.com/shespeaksfireco" 
+        href="https://instagram.com/brunchandpray" 
         target="_blank" 
         rel="noopener noreferrer"
-        className='mt-20 border-b-2 border-[#d84136] text-[#2e2c2b] font-bold tracking-[0.3em] pb-1 hover:text-[#d84136] transition-colors uppercase text-sm'
+        className='mt-20 border-b-2 border-[#d84136] text-[#2e2c2b] font-bold lg:tracking-[0.3em] pb-1 hover:text-[#d84136] transition-colors uppercase lg:text-sm text-xs'
       >
         View Instagram Gallery
       </a>
