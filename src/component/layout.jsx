@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
   return (
     <div className="bg-[#dcd3ca] min-h-screen font-sans text-[#2e2c2b] w-full">
       {/* --- DESKTOP SIDE NAVIGATION (STUCK TO RIGHT) --- */}
-      <nav className="fixed bg-white border border-gray-100 py-4 rounded-full backdrop:blur-lg left-1/2 -translate-x-1/2 my-4 shadow-2xl px-9 hidden lg:flex gap-16 text-[11px] tracking-[0.1em] text-[#d84136] z-40 font-bold transition-opacity hover:opacity-100 opacity-90 items-center w-[70%] justify-center">
+      <nav className="fixed bg-white border border-gray-100 py-4 rounded-full backdrop:blur-lg left-1/2 -translate-x-1/2 my-4 shadow-2xl px-9 hidden lg:flex gap-12 text-[11px] tracking-[0.1em] text-[#d84136] z-40 font-bold transition-opacity hover:opacity-100 opacity-90 items-center w-[80%] justify-center">
         <a href="/" className="hover:text-[#2e2c2b] transition-colors overflow-y-hidden">
           <img src="/logo-white.jpeg" alt="logo" className="w-12 h-10"/>
         </a>
@@ -16,6 +16,8 @@ const Layout = ({ children }) => {
         <a href="/purpose" className="hover:text-[#2e2c2b] transition-colors whitespace-nowrap">PURPOSE & OUTREACH</a>
         <a href="/book" className="hover:text-[#2e2c2b] transition-colors">BOOK</a>
         <a href="/about" className="hover:text-[#2e2c2b] transition-colors whitespace-nowrap">ABOUT FOUNDER</a>
+        <a href="/events" className="hover:text-[#2e2c2b] transition-colors whitespace-nowrap">EVENTS</a>
+        <a href="/get-tickets" className="hover:text-[#2e2c2b] transition-colors whitespace-nowrap">GET TICKETS</a>
       </nav>
 
       {/* --- MOBILE HAMBURGER --- */}
@@ -41,7 +43,7 @@ const Layout = ({ children }) => {
           
           <div className="flex flex-col gap-6 text-center">
             <h2 className="text-[#d84136] text-3xl mb-4 tracking-widest">MENU</h2>
-            {["HOME", "ABOUT", "MISSION", "PURPOSE", "BOOK"].map((link) => (
+            {["HOME", "ABOUT", "MISSION", "PURPOSE", "BOOK", "EVENTS", "GET-TICKET"].map((link) => (
               <a
                 key={link}
                 href={`/${link.toLowerCase()}`}
