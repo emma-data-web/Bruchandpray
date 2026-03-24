@@ -11,7 +11,7 @@ const Mariela = () => {
         <div className="relative group">
           <div className="absolute -inset-4 border border-[#d84136]/30 lg:rounded-[60px] rounded-2xl group-hover:inset-0 transition-all duration-500" />
           <img 
-            src={Img2} 
+            src="./founder.jpeg" 
             className="lg:rounded-[60px] rounded-2xl w-full h-[600px] object-cover shadow-2xl relative z-10" 
           />
         </div>

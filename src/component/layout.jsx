@@ -6,10 +6,12 @@ const Layout = ({ children }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="bg-[#dcd3ca] min-h-screen font-sans text-[#2e2c2b]">
+    <div className="bg-[#dcd3ca] min-h-screen font-sans text-[#2e2c2b] w-full">
       {/* --- DESKTOP SIDE NAVIGATION (STUCK TO RIGHT) --- */}
-      <nav className="fixed bottom-4 right-5 hidden lg:flex gap-8 text-[11px] tracking-[0.4em] text-[#d84136] z-40 rotate-90 origin-top-right font-bold transition-opacity hover:opacity-100 opacity-70">
-        <a href="/" className="hover:text-[#2e2c2b] transition-colors">HOME</a>
+      <nav className="fixed bg-white border border-gray-100 py-4 rounded-full backdrop:blur-lg left-1/2 -translate-x-1/2 my-4 shadow-2xl px-9 hidden lg:flex gap-8 text-[11px] tracking-[0.1em] text-[#d84136] z-40 font-bold transition-opacity hover:opacity-100 opacity-90 items-center">
+        <a href="/" className="hover:text-[#2e2c2b] transition-colors">
+          <img src="/logo-white.jpeg" alt="logo" className="w-12 h-12"/>
+        </a>
         <a href="/mission" className="hover:text-[#2e2c2b] transition-colors whitespace-nowrap">MISSION STATEMENT</a>
         <a href="/purpose" className="hover:text-[#2e2c2b] transition-colors whitespace-nowrap">PURPOSE & OUTREACH</a>
         <a href="/book" className="hover:text-[#2e2c2b] transition-colors">BOOK</a>

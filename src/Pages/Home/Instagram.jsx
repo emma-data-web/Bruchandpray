@@ -1,67 +1,74 @@
-// import React from 'react';
-import In1 from "../../assets/in1.png";
-import In2 from "../../assets/in2.png";
-import In3 from "../../assets/in3.png";
-import In4 from "../../assets/in4.png";
-import In5 from "../../assets/in5.png";
 
 const Instagram = () => {
-  const images = [In1, In2, In3, In4, In5];
+  const images = [
+    { src: "./in1.jpeg", size: 'w-40 h-40 lg:w-64 lg:h-64', tilt: '-rotate-3' },
+    { src:"./in2.jpeg", size: 'w-32 h-32 lg:w-48 lg:h-48', tilt: 'rotate-6' },
+    { src: "./in3.jpeg", size: 'w-48 h-48 lg:w-72 lg:h-72', tilt: '-rotate-2' },
+    { src: "./in4.jpeg", size: 'w-36 h-36 lg:w-56 lg:h-56', tilt: 'rotate-3' },
+    { src: "./in5.jpeg", size: 'w-40 h-40 lg:w-60 lg:h-60', tilt: '-rotate-6' },
+  ];
 
   return (
-    <div className='relative pt-32 pb-20 flex flex-col justify-center items-center px-5 overflow-hidden'>
-      {/* BACKGROUND TEXT - Large & Subtle */}
-      <h1 className='absolute top-20 text-[10rem] md:text-[18rem] lg:text-[22rem] text-[#2e2c2b] opacity-[0.03] select-none leading-none'>
-        SOCIALS
+    <section className='relative py-32 flex flex-col items-center overflow-hidden rounded-t-[100px]'>
+      {/* Background Decorative Text */}
+      <h1 className='absolute top-10 font-["Bebas_Neue"] text-[15rem] md:text-[25rem] opacity-[0.02] select-none pointer-events-none'>
+        COMMUNITY
       </h1>
 
-      <div className='relative z-10 text-center mb-12'>
-        <p className='text-[#d84136] font-bold lg:tracking-[0.4em] tracking-[0.1em] text-sm md:text-base uppercase pb-2'>
-          Follow the Journey
+      <div className='relative z-10 text-center mb-20 px-6'>
+        <p className='text-[#d84136] font-bold tracking-[0.5em] text-xs uppercase mb-4'>
+          Join the Movement
         </p>
-        <h2 className='text-3xl lg:text-5xl text-[#2e2c2b] font-semibold leading-tight'>
-          @BRUNCHANDPRAY
+        <h2 className='font-["Playfair_Display"] text-5xl md:text-6xl italic'>
+          @brunchandpray
         </h2>
       </div>
 
-      {/* IMAGE GRID - Staggered & Overlapping */}
-      <div className='flex flex-wrap justify-center gap-4 lg:gap-8 max-w-7xl mx-auto'>
-        {images.map((img, index) => (
+      {/* DYNAMIC CLOUD GRID */}
+      <div className='flex flex-wrap justify-center items-center gap-6 md:gap-12 max-w-7xl mx-auto px-10'>
+        {images.map((item, index) => (
           <div 
             key={index} 
             className={`
-              relative group cursor-pointer overflow-hidden rounded-full shadow-xl transition-all duration-500 hover:-translate-y-4
-              w-[140px] h-[140px] md:w-[200px] md:h-[200px] lg:w-[240px] lg:h-[240px]
-              ${index % 2 === 0 ? 'mt-0' : 'mt-8 lg:mt-12'}
-              ${index > 2 ? 'hidden md:block' : ''}
+              relative group cursor-pointer transition-all duration-700 hover:z-50
+              ${item.size} ${item.tilt} hover:rotate-0 hover:scale-110
             `}
           >
-            {/* Hover Overlay */}
-            <div className='absolute inset-0 bg-[#d84136]/40 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center'>
-              <span className='text-white font-bold tracking-widest text-xs uppercase border border-white p-2'>
-                View Post
-              </span>
+            {/* The Quran.co Arched Frame Effect */}
+            <div className='w-full h-full overflow-hidden rounded-[30px] md:rounded-[50px] border-[6px] border-white/10 group-hover:border-[#d84136] transition-colors shadow-2xl'>
+              <div className='absolute inset-0 group-hover:bg-transparent transition-colors z-10'></div>
+              <img 
+                src={item.src} 
+                className='w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 group-hover:brightness-110' 
+                alt={`Social ${index}`}
+              />
             </div>
-            
-            <img 
-              src={img} 
-              className='w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110' 
-              alt={`Instagram post ${index + 1}`}
-            />
+
+            {/* Floating Heart Icon on Hover */}
+            <div className='absolute -top-4 -right-4 bg-white text-[#d84136] w-12 h-12 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-lg scale-50 group-hover:scale-100'>
+              <span className='text-xl'>♥</span>
+            </div>
           </div>
         ))}
       </div>
 
-      {/* VIEW ALL BUTTON */}
-      <a 
-        href="https://instagram.com/brunchandpray" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className='mt-20 border-b-2 border-[#d84136] text-[#2e2c2b] font-bold lg:tracking-[0.3em] pb-1 hover:text-[#d84136] transition-colors uppercase lg:text-sm text-xs'
-      >
-        View Instagram Gallery
-      </a>
-    </div>
+      <div className='mt-24 relative z-10'>
+        <a 
+          href="https://instagram.com/brunchandpray" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className='group flex flex-col items-center gap-2'
+        >
+          <span className='font-bold tracking-[0.4em] uppercase text-xs transition-all group-hover:tracking-[0.6em]'>
+            Follow our daily fire
+          </span>
+          <div className='h-[2px] w-12 bg-[#d84136] group-hover:w-32 transition-all duration-500'></div>
+        </a>
+      </div>
+      
+      {/* Abstract Glow Bottom Left */}
+      <div className='absolute -bottom-20 -left-20 w-80 h-80 bg-[#d84136] rounded-full blur-[150px] opacity-20'></div>
+    </section>
   );
 };
 

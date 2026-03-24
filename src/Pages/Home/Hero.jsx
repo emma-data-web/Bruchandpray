@@ -3,15 +3,15 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen pt-32 pb-20 px-6 flex flex-col items-center overflow-hidden bg-white">
       {/* Floating Pill Badges */}
-      <div className="absolute top-[7%] left-[7%] bg-gray-200 backdrop-blur-md border border-white/60 px-6 py-2 rounded-full text-xs tracking-[0.3em] font-bold animate-bounce-slow">
+      {/* <div className="absolute top-[7%] left-[7%] bg-gray-200 backdrop-blur-md border border-white/60 px-6 py-2 rounded-full text-xs tracking-[0.3em] font-bold animate-bounce-slow">
         SISTERHOOD
-      </div>
+      </div> */}
       <div className="absolute top-[22%] right-[20%] bg-[#d84136] text-white px-6 py-2 rounded-full text-xs tracking-[0.3em] font-bold lg:flex hidden">
         PRAYER MOVEMENT
       </div>
 
       <div className="text-center max-w-4xl z-10">
-        <h1 className="text-uppercase font-semibold lg:text-9xl text-6xl tracking-wide text-[#2e2c2b] lg:leading-32 mb-6 lg:mt-0 mt-6">
+        <h1 className="text-uppercase font-black lg:text-9xl text-6xl tracking-wide text-[#2e2c2b] lg:leading-32 mb-6 lg:mt-0 mt-6">
           BRUNCH <span className="text-[#d84136]">&</span> PRAY
         </h1>
         <p className="max-w-xl mx-auto text-lg text-[#2e2c2b]/70 tracking-wide leading-relaxed">

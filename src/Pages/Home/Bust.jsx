@@ -17,7 +17,7 @@ const Bust = () => {
           <div className='group cursor-pointer'>
             <div className="overflow-hidden relative h-[400px]">
               <img 
-                src={Phone} 
+                src="./facebook.jpeg" 
                 className='w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0' 
               />
               <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
@@ -34,7 +34,7 @@ const Bust = () => {
           <div className='group cursor-pointer md:-mt-12 rounded-3xl'>
             <div className="overflow-hidden relative h-[500px] border-x border-[#d84136]/30 px-4">
               <img 
-                src={Woman3} 
+                src="./subscribe.jpeg"
                 className='w-full h-full object-cover transition-transform duration-700 group-hover:scale-110' 
               />
               <div className="absolute bottom-4 left-8 right-8 bg-[#d84136] p-4 text-center">
@@ -52,7 +52,7 @@ const Bust = () => {
           <div className='group cursor-pointer'>
             <div className="overflow-hidden relative h-[400px]">
               <img 
-                src={Computer} 
+                src="./youtube.jpeg" 
                 className='w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0' 
               />
               <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
