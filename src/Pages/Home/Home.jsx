@@ -6,16 +6,18 @@ import Download from "./Download";
 import Bust from "./Bust";
 import Instagram from "./Instagram";
 
+
 const Home = () => {
   return (
     <Layout>
-      <div className="bg-[#e8d5c4] w-full overflow-x-hidden font-sans text-[#2e2c2b]">
+      <div className="bg-[#f8efe9] w-full overflow-x-hidden font-sans text-[#2e2c2b]">
         <Hero />
         
         {/* Simple elegant divider */}
         <div className="flex justify-center py-10">
-          <div className="h-20 w-[1px] bg-[#d84136]/30"></div>
+          <div className="h-20 w-[1px] bg-[#6A2B73]/30"></div>
         </div>
+
 
         <Voice />
         <Mariela />
@@ -30,5 +32,6 @@ const Home = () => {
     </Layout>
   );
 };
+
 
 export default Home;

@@ -1,6 +1,6 @@
 const Hero = () => {
   return (
-    <section className="relative min-h-screen pt-32 pb-20 px-6 bg-[linear-gradient(135deg,#f8efe9_0%,#f6ddd5_45%,#fbeee8_100%)] flex flex-col items-center overflow-hidden bg-[#e8d5c4]">
+    <section className="relative min-h-screen pt-32 pb-20 px-6 bg-[linear-gradient(135deg,#6A2B73_0%,#f8efe9_52%,#fbeee8_100%)] flex flex-col items-center overflow-hidden">
       {/* Floating Pill Badges */}
       {/* <div className="absolute top-[7%] left-[7%] bg-gray-200 backdrop-blur-md border border-white/60 px-6 py-2 rounded-full text-xs tracking-[0.3em] font-bold animate-bounce-slow">
         SISTERHOOD
@@ -19,10 +19,10 @@ const Hero = () => {
         </p>
         
         <div className="mt-10 flex gap-4 justify-center lg:flex-row flex-col">
-          <button className="bg-[#2e2c2b] text-white px-10 py-4 rounded-full tracking-widest hover:bg-[#d84136] transition-all">
+          <button className="bg-[#B21E29] text-white px-10 py-4 rounded-full tracking-widest hover:bg-[#F39221] transition-all">
             JOIN THE TABLE
           </button>
-          <button className="border border-gray-100 text-[#2e2c2b] px-10 py-4 rounded-full tracking-widest hover:bg-white/50 transition-all bg-white">
+          <button className="border border-gray-100 text-[#2e2c2b] px-10 py-4 rounded-full tracking-widest hover:bg-[#00A5BC] hover:text-white transition-all bg-white">
             OUR MISSION
           </button>
         </div>
