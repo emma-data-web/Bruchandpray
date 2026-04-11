@@ -3,6 +3,7 @@ const events = [
   { id: 2, day: "WED", date: "14-02-25", title: "Youth Revival", desc: "Breaking chains of fear and stepping into purpose." },
   { id: 3, day: "SUN", date: "18-02-25", title: "Sunday Service", desc: "A powerful time of worship and community." },
 ];
+
 const Voice = () => {
   return (
     <section className="py-24 bg-[#f3e6ee] px-6">
@@ -29,27 +30,33 @@ const Voice = () => {
           </div>
         </div>
 
-        {/* Card 2 - Purple */}
-        <div className="bg-[#6A2B73] p-10 rounded-[40px] text-white transform md:scale-105 shadow-2xl">
-          <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-8 -rotate-3 border border-white/20">
-             <span className="text-[#00A5BC] font-bold">02</span>
+        {/* Bottom Cards - Responsive Row on Large Screens */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          
+          {/* Card 2 - Purple */}
+          <div className="bg-[#6A2B73] p-10 rounded-[40px] text-white transform md:scale-105 shadow-2xl">
+            <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-8 -rotate-3 border border-white/20">
+              <span className="text-[#00A5BC] font-bold">02</span>
+            </div>
+            <h3 className="text-3xl mb-4">Books we love</h3>
+            <p className="opacity-70 leading-relaxed">
+              Personalized guidance to help you walk in your God-given purpose and lead with authority.
+            </p>
           </div>
-          <h3 className="text-3xl mb-4">Books we love</h3>
-          <p className="opacity-70 leading-relaxed">
-            Personalized guidance to help you walk in your God-given purpose and lead with authority.
-          </p>
+
+          {/* Card 3 - Orange */}
+          <div className="bg-[#F39221] p-10 rounded-[40px] text-white shadow-sm hover:shadow-xl transition-all">
+            <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-8 rotate-6 border border-white/30">
+              <span className="text-white font-bold">03</span>
+            </div>
+            <h3 className="text-3xl mb-4 font-bold">Upcoming Events</h3>
+            <p className="opacity-80 leading-relaxed">
+              It's time to get your voice back and step into the room as the woman you were created to be.
+            </p>
+          </div>
+
         </div>
 
-        {/* Card 3 - Orange */}
-        <div className="bg-[#F39221] p-10 rounded-[40px] text-white shadow-sm hover:shadow-xl transition-all">
-          <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-8 rotate-6 border border-white/30">
-             <span className="text-white font-bold">03</span>
-          </div>
-          <h3 className="text-3xl mb-4 font-bold">Upcoming Events</h3>
-          <p className="opacity-80 leading-relaxed">
-            It's time to get your voice back and step into the room as the woman you were created to be.
-          </p>
-        </div>
       </div>
     </section>
   );

@@ -3,7 +3,8 @@ import Computer from "../../assets/computer.png";
 const Download = () => {
   return (
     <div className="px-6 py-20 bg-[#00A5BC]">
-      <div className="max-w-6xl mx-auto bg-[#6A2B73] lg:rounded-[60px] rounded-2xl p-10 md:p-24 flex flex-col md:flex-row items-center gap-16 relative overflow-hidden">
+      <div className="max-w-6xl mx-auto bg-gradient-to-br from-[#1A0F1F] via-[#2A1233] to-[#3A1745] lg:rounded-[60px] rounded-2xl p-10 md:p-24 flex flex-col md:flex-row items-center gap-16 relative overflow-hidden">
+        
         {/* Abstract Background Circle */}
         <div className="absolute top-[-50%] right-[-10%] w-[400px] h-[400px] bg-[#B21E29] rounded-full blur-[100px] opacity-20" />
         
@@ -29,6 +30,7 @@ const Download = () => {
         <div className="lg:w-1/2 relative z-10 flex justify-center">
           <img src={Computer} className="lg:w-[80%] w-full drop-shadow-2xl animate-float" />
         </div>
+
       </div>
     </div>
   );

@@ -12,19 +12,16 @@ const Home = () => {
     <Layout>
       <div className="bg-[#ffffff] w-full overflow-x-hidden font-sans text-[#2e2c2b]">
         <Hero />
-        
-        {/* Simple elegant divider */}
-        <div className="flex justify-center py-10">
-          <div className="h-20 w-[1px] bg-[#6A2B73]/30"></div>
-        </div>
+      
 
 
         <Voice />
         <Mariela />
         <Download />
         
+        
         {/* Dark Mode Break for Bust a Move */}
-        <div className="rounded-t-[100px] mt-20">
+        <div className="rounded-t-[100px]">
           <Bust />
           <Instagram />
         </div>
