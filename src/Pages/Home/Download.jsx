@@ -1,8 +1,4 @@
-// import React from "react";
 import Computer from "../../assets/computer.png";
-// import Angela from "../../assets/angela.png";
-// import Bible from "../../assets/bible.png";
-
 
 const Download = () => {
   return (
@@ -16,7 +12,7 @@ const Download = () => {
             Get Your Free <span className="text-[#F39221]">Affirmations</span> Guide
           </h2>
           <p className="text-white/60 mt-6 text-lg">
-            13 pages of biblical truth to help you renew your mind and see yourself through God&apos;s eyes.
+            13 pages of biblical truth to help you renew your mind and see yourself through God's eyes.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <input 
@@ -30,7 +26,6 @@ const Download = () => {
           </div>
         </div>
 
-
         <div className="lg:w-1/2 relative z-10 flex justify-center">
           <img src={Computer} className="lg:w-[80%] w-full drop-shadow-2xl animate-float" />
         </div>
@@ -38,6 +33,5 @@ const Download = () => {
     </div>
   );
 };
-
 
 export default Download;

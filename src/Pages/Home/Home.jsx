@@ -10,7 +10,7 @@ import Instagram from "./Instagram";
 const Home = () => {
   return (
     <Layout>
-      <div className="bg-[#f8efe9] w-full overflow-x-hidden font-sans text-[#2e2c2b]">
+      <div className="bg-[#ffffff] w-full overflow-x-hidden font-sans text-[#2e2c2b]">
         <Hero />
         
         {/* Simple elegant divider */}

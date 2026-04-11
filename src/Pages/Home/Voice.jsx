@@ -29,7 +29,6 @@ const Voice = () => {
           </div>
         </div>
 
-
         {/* Card 2 - Purple */}
         <div className="bg-[#6A2B73] p-10 rounded-[40px] text-white transform md:scale-105 shadow-2xl">
           <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-8 -rotate-3 border border-white/20">
@@ -41,7 +40,6 @@ const Voice = () => {
           </p>
         </div>
 
-
         {/* Card 3 - Orange */}
         <div className="bg-[#F39221] p-10 rounded-[40px] text-white shadow-sm hover:shadow-xl transition-all">
           <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-8 rotate-6 border border-white/30">
@@ -52,12 +50,9 @@ const Voice = () => {
             It's time to get your voice back and step into the room as the woman you were created to be.
           </p>
         </div>
-
-
       </div>
     </section>
   );
 };
-
 
 export default Voice;

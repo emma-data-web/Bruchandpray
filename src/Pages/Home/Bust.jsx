@@ -5,10 +5,10 @@ import Computer from "../../assets/computer.png"
 
 const Bust = () => {
   return (
-    <div className='py-32 bg-black text-[#dcd3ca] overflow-hidden'>
+    <div className='py-32 bg-black text-[#ffffff] overflow-hidden'>
       <div className="container mx-auto px-6">
         <h1 className='text-3xl md:text-8xl lg:text-8xl font-bold text-center leading-none mb-20 opacity-90'>
-          BUST A <span className="text-[#d84136]">MOVE</span>
+          <span className="text-cyan">BUST A</span> <span className="text-[#d84136]">MOVE</span>
         </h1>
 
         <div className='grid grid-cols-1 md:grid-cols-3 gap-12 items-start'>
