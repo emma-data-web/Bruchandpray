@@ -1,36 +1,19 @@
 import "./Hero.css";
 
-const ArrowPointer = () => (
-  <svg
-    className="bp-arrow-pointer"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-  >
-    <path
-      d="M5 12H17M17 12L12 7M17 12L12 17"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
-
 const Hero = () => {
   return (
     <section className="bp-hero">
 
-      {/* BIG ANIMATED BACKGROUND RINGS */}
+      {/* BIG BACKGROUND RINGS (ONLY 2 NOW) */}
       <div className="bp-rings">
-        <span className="bp-ring" />
         <span className="bp-ring" />
         <span className="bp-ring" />
       </div>
 
-      {/* CENTER CONTENT WRAPPER */}
+      {/* CENTER CONTENT */}
       <div className="bp-center">
+
+        <div style={{ marginTop: "72px" }} />
 
         <div className="bp-tag">
           <span className="bp-tag-dot" />
@@ -40,6 +23,12 @@ const Hero = () => {
         <h1 className="bp-title">
           Brunch <span>&amp;</span> Pray
         </h1>
+
+        {/* 👇 NEW ARROW */}
+        <div className="bp-arrow-wrap">
+          <span className="bp-arrow-line" />
+          <span className="bp-arrow-head" />
+        </div>
 
         <p className="bp-tagline">
           Where women gather around a table, share life honestly,
@@ -53,14 +42,14 @@ const Hero = () => {
 
         <div className="bp-proof">
           <div className="bp-avatars">
-            <span>A</span>
-            <span>B</span>
-            <span>C</span>
-            <span>D</span>
-            <span>E</span>
+            <span><img src="/src/assets/circle-1.png" alt="one"/></span>
+            <span><img src="/src/assets/circle-2.png" alt="two"/></span>
+            <span><img src="/src/assets/circle-3.png" alt="three"/></span>
+            <span><img src="/src/assets/circle-4.png" alt="four"/></span>
+            <span><img src="/src/assets/circle-5.png" alt="five"/></span>
           </div>
           <div className="bp-proof-text">
-            <strong>200+ women</strong>
+            <strong>30+ women</strong>
             gathered together
           </div>
         </div>

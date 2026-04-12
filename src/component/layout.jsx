@@ -1,6 +1,7 @@
 import { FaFacebookF, FaInstagram, FaPinterestP } from "react-icons/fa";
 import { IoMailOutline, IoClose, IoMenu } from "react-icons/io5";
 import { useState } from "react";
+import logoBlack from "../assets/logo-black.png";
 
 const Layout = ({ children }) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -8,23 +9,25 @@ const Layout = ({ children }) => {
   return (
     <div className="bg-gradient-to-br from-[#2a0f2e] via-[#3a1a3e] to-[#4a233e] min-h-screen font-sans text-[#f8e8f0] w-full">
       {/* --- DESKTOP SIDE NAVIGATION (STUCK TO RIGHT) --- */}
-      <nav className="fixed bg-white/95 backdrop-blur-xl border border-white/20 py-4 rounded-full left-1/2 -translate-x-1/2 my-4 shadow-2xl px-9 hidden lg:flex gap-12 text-[11px] tracking-[0.1em] text-[#6A2B73] z-40 font-bold transition-opacity hover:opacity-100 opacity-90 items-center w-[50%] justify-center">
-        <a href="/" className="hover:text-[#2e2c2b] transition-colors overflow-y-hidden">
-         <img src="/logo-white.jpeg" alt="logo" className="w-12 h-10"/>
-        </a>
-        <a href="/mission" className="hover:text-[#2e2c2b] transition-colors whitespace-nowrap">MISSION</a>
-        <a href="/book" className="hover:text-[#2e2c2b] transition-colors">BOOK</a>
-        <a href="/about" className="hover:text-[#2e2c2b] transition-colors whitespace-nowrap">ABOUT FOUNDER</a>
-        <a href="/events" className="hover:text-[#2e2c2b] transition-colors whitespace-nowrap">EVENTS</a>
-        <a href="/get-tickets" className="hover:text-[#2e2c2b] transition-colors whitespace-nowrap">GET TICKETS</a>
-      </nav>
+     <nav className="fixed bg-white/95 backdrop-blur-xl border border-white/20 py-4 rounded-full left-1/2 -translate-x-1/2 my-4 shadow-2xl px-9 hidden lg:flex gap-12 text-[11px] tracking-[0.1em] text-[#6A2B73] z-40 font-bold transition-opacity hover:opacity-100 opacity-90 items-center w-[80%] justify-center">
+  
+  <a href="/" className="hover:text-[#2e2c2b] mr-6">
+    <img src={logoBlack} alt="logo" className="w-12 h-10"/>
+  </a>
 
+  <a href="/mission" className="hover:text-[#2e2c2b] whitespace-nowrap">MISSION</a>
+  <a href="/book" className="hover:text-[#2e2c2b]">BOOK</a>
+  <a href="/about" className="hover:text-[#2e2c2b] whitespace-nowrap">ABOUT FOUNDER</a>
+  <a href="/events" className="hover:text-[#2e2c2b] whitespace-nowrap">EVENTS</a>
+  <a href="/get-tickets" className="hover:text-[#2e2c2b] whitespace-nowrap">GET TICKETS</a>
+
+</nav>
       {/* --- MOBILE HAMBURGER --- */}
       <div
         className="fixed top-3 px-4 text-4xl text-[#e8b8d8] md:hidden z-50 bg-white/30 backdrop-blur-xl p-2 rounded-full flex items-center justify-between w-full"
       >
         <a href="/" className="hover:text-[#f8e8f0] transition-colors">
-         <img src="/logo-white.jpeg" alt="logo" className="w-12 h-12"/>
+         <img src="/src/assets/logo-black.png" alt="logo" className="w-12 h-12"/>
         </a>
         <IoMenu 
         onClick={() => setMenuOpen(true)} />
@@ -75,7 +78,7 @@ const Layout = ({ children }) => {
 
             {/* Middle Branding */}
             <div className="flex flex-col lg:items-center lg:border-x border-[#d8b8d0]/30 lg:px-10 py-4">
-              <img src="/logo-black.jpeg" className="w-30 filter invert brightness-0"/>
+              <img src="/src/assets/logo-silver.png" className="w-30 filter "/>
               <div className="flex items-center gap-6 text-2xl">
                 <FaFacebookF className="cursor-pointer hover:text-[#f8e8f0] transition-all hover:-translate-y-1" />
                 <a href="https://instagram.com/brunchandpray"><FaInstagram className="cursor-pointer hover:text-[#f8e8f0] transition-all hover:-translate-y-1" /></a>
