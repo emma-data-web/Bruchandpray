@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="bg-[#dcd3ca] min-h-screen font-sans text-[#2e2c2b] w-full">
+    <div className=" min-h-screen font-sans text-[#2e2c2b] w-full">
       {/* --- DESKTOP SIDE NAVIGATION (STUCK TO RIGHT) --- */}
       <nav className="fixed bg-white border border-gray-100 py-4 rounded-full backdrop:blur-lg left-1/2 -translate-x-1/2 my-4 shadow-2xl px-9 hidden lg:flex gap-12 text-[11px] tracking-[0.1em] text-[#d84136] z-40 font-bold transition-opacity hover:opacity-100 opacity-90 items-center w-[50%] justify-center">
         <a href="/" className="hover:text-[#2e2c2b] transition-colors overflow-y-hidden">

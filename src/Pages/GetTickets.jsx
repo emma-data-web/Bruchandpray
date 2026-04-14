@@ -120,7 +120,7 @@ function CheckoutModal({ selectedTicket, onClose }) {
                 </div>
               )}
 
-              <div className="p-4 rounded-lg my-4 bg-[#f8f1ec]">
+              <div className="p-4 rounded-lg my-4">
                 <p className="text-sm text-[#2e2c2b]">
                   <span className="font-semibold">Total:</span> ${(selectedTicket?.price * quantity).toFixed(2)}
                 </p>
@@ -150,10 +150,10 @@ function CheckoutForm() {
 
   return (
     <>
-      <section className="py-24 bg-[#e9ded5] px-6">
+      <section className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-7xl font-black text-[#2e2c2b] mb-4 tracking-wide pt-10">
+            <h1 className="text-5xl md:text-7xl font-black text-[#2e2c2b] mb-4 tracking-wide pt-20">
               GET YOUR TICKETS
             </h1>
             <p className="text-lg text-[#2e2c2b]/70 max-w-2xl mx-auto leading-relaxed">
@@ -161,7 +161,7 @@ function CheckoutForm() {
             </p>
           </div>
 
-          <div className="rounded-3xl border border-[#2e2c2b]/10 p-8 bg-white shadow-sm mb-16">
+          <div className="rounded-3xl border border-[#2e2c2b]/10 p-8 bg-white shadow-xl mb-16">
             <div className="mb-6 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
               <div>
                 <h3 className="text-2xl font-bold text-[#d84136] mb-2">{ticketItem.type}</h3>
@@ -174,7 +174,7 @@ function CheckoutForm() {
             </p>
           </div>
 
-          <div className="bg-white rounded-3xl p-8 md:p-12 mb-16 border border-[#2e2c2b]/10 flex justify-between lg:flex-row flex-col gap-6">
+          <div className="bg-white rounded-3xl p-8 md:p-12 mb-16 border border-[#2e2c2b]/10 flex justify-between lg:flex-row flex-col gap-6 shadow-xl">
             <div className="grid md:grid-cols-3 gap-8">
               {events.map((event) => (
                 <div key={event.id}>
@@ -247,7 +247,7 @@ function CheckoutForm() {
 const GetTickets = () => {
   return (
     <Layout>
-      <div className="bg-[#f1ece8] w-full overflow-x-hidden font-sans text-[#2e2c2b]">
+      <div className="bg-rgb(255,253,255) w-full overflow-x-hidden font-sans text-[#2e2c2b]">
         <SleekToast />
         <CheckoutForm />
       </div>
