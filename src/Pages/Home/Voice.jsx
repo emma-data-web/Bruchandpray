@@ -2,7 +2,7 @@ const events = [
     { id: 1, day: "MON", date: "12-02-25", title: "Holy Spirit Night", desc: "Uncovering the fire God placed inside you." },
     { id: 2, day: "WED", date: "14-02-25", title: "Youth Revival", desc: "Breaking chains of fear and stepping into purpose." },
     { id: 3, day: "SUN", date: "18-02-25", title: "Sunday Service", desc: "A powerful time of worship and community." },
-  ];
+];
 const Voice = () => {
   return (
     <section className="py-24 bg-white/30 px-6">
