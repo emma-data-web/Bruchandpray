@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
         <a href="/book" className="hover:text-[#2e2c2b] transition-colors">BOOK</a>
         <a href="/about" className="hover:text-[#2e2c2b] transition-colors whitespace-nowrap">ABOUT FOUNDER</a>
         <a href="/events" className="hover:text-[#2e2c2b] transition-colors whitespace-nowrap">EVENTS</a>
-        <a href="/get-tickets" className="hover:text-[#2e2c2b] transition-colors whitespace-nowrap">GET TICKETS</a>
+        {/* <a href="/get-tickets" className="hover:text-[#2e2c2b] transition-colors whitespace-nowrap">GET TICKETS</a> */}
       </nav>
 
       {/* --- MOBILE HAMBURGER --- */}
