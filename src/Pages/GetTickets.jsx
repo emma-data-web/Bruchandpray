@@ -198,6 +198,8 @@ function CheckoutForm() {
             </p> */}
           </div>
 
+            {/* --- About Section --- */}
+
           <div className="bg-white rounded-[40px] p-8 md:p-14 mb-16 border border-[#2e2c2b]/10 shadow-2xl">
             <div className="flex flex-col lg:flex-row items-center gap-14">
               {/* Image Section */}
@@ -230,6 +232,34 @@ function CheckoutForm() {
                     </div>
                   </div>
                 ))}
+              </div>
+            </div>
+          </div>
+
+          {/* --- Book Section --- */}
+          <div className="bg-white rounded-[40px] p-8 md:p-14 mb-16 border border-[#2e2c2b]/10 shadow-2xl">
+            <div className="flex flex-col lg:flex-row items-center gap-14">
+              {/* Image Section */}
+              <div className="w-full lg:w-[38%]">
+                <img
+                  src="/Book.PNG"
+                  alt="Book"
+                  className="w-full h-[500px] object-cover rounded-[30px] shadow-lg"
+                />
+              </div>
+
+              {/* Text Section */}
+              <div className="flex-1 w-full">
+                  <div className="w-full">
+                    <h3 className="text-4xl font-bold text-[#d84136] mb-8 leading-tight">
+                      Book
+                    </h3>
+
+                    <div className="space-y-6 text-[#2e2c2b]/80 text-lg leading-10">
+
+                      <p className="w-full">The words in this book are drawn from the Bible. They are specially chosen to build and inspire our children. By regularly reading and internalizing these words, our children are expected to grow up to become great role models and respectable leaders in our communities.</p>
+                    </div>
+                  </div>
               </div>
             </div>
           </div>
