@@ -264,6 +264,38 @@ function CheckoutForm() {
             </div>
           </div>
 
+           {/* --- Past Event Section --- */}
+          <div className="bg-white rounded-[40px] p-8 md:p-14 mb-16 border border-[#2e2c2b]/10 shadow-2xl">
+            <div className="flex flex-col lg:flex-row items-center gap-14">
+              {/* Text Section */}
+              <div className="flex-1 w-full">
+                  <div className="w-full">
+                    <h3 className="text-4xl font-bold text-[#d84136] mb-8 leading-tight">
+                      Past Event
+                    </h3>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+           {/* --- Upcoming Event Section --- */}
+          <div className="bg-white rounded-[40px] p-8 md:p-14 mb-16 border border-[#2e2c2b]/10 shadow-2xl">
+            <div className="flex flex-col lg:flex-row items-center gap-14">
+
+              {/* Text Section */}
+              <div className="flex-1 w-full">
+                  <div className="w-full">
+                    <h3 className="text-4xl font-bold text-[#d84136] mb-8 leading-tight">
+                      Upcoming Event
+                    </h3>
+
+                    <div className="space-y-6 text-[#2e2c2b]/80 text-lg leading-10">
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+
           <div className="bg-[#2e2c2b] rounded-3xl p-12 text-[#dcd3ca]">
             <h2 className="text-4xl font-bold mb-12 text-center text-[#d84136]">
               WHY ATTEND?
