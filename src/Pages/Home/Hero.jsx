@@ -1,4 +1,9 @@
 import "./Hero.css";
+import {circle1} from "../../assets/circle-1.png";
+import {circle2} from "../../assets/circle-2.png";
+import {circle3} from "../../assets/circle-3.png";
+import {circle4} from "../../assets/circle-4.png";
+import {circle5} from "../../assets/circle-5.png";
 
 const Hero = () => {
   return (
@@ -42,11 +47,11 @@ const Hero = () => {
 
         <div className="bp-people">
           <div className="bp-avatars">
-            <span><img src="/src/assets/circle-1.png" alt="one"/></span>
-            <span><img src="/src/assets/circle-2.png" alt="two"/></span>
-            <span><img src="/src/assets/circle-3.png" alt="three"/></span>
-            <span><img src="/src/assets/circle-4.png" alt="four"/></span>
-            <span><img src="/src/assets/circle-5.png" alt="five"/></span>
+            <span><img src={circle1} alt="one"/></span>
+            <span><img src={circle2} alt="two"/></span>
+            <span><img src={circle3} alt="three"/></span>
+            <span><img src={circle4} alt="four"/></span>
+            <span><img src={circle5} alt="five"/></span>
           </div>
           <div className="bp-person-text">
             <p><strong>30+ women</strong> gathered together </p> 
