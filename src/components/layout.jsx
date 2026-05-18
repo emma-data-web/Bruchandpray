@@ -1,8 +1,8 @@
 import { FaFacebookF, FaInstagram, FaPinterestP } from "react-icons/fa";
 import { IoMailOutline, IoClose } from "react-icons/io5";
 import { useState } from "react";
-import Nav from "../component/Nav";
-import Footer from "..component/Footer";
+import Nav from "./Nav.jsx";
+import Footer from "./Footer.jsx";
 
 const Layout = ({ children }) => {
   const [menuOpen, setMenuOpen] = useState(false);

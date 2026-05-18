@@ -1,4 +1,4 @@
-import Layout from "../../component/layout";
+import Layout from "../../components/layout";
 import Hero from "./Hero";
 import Voice from "./Voice";
 import Mariela from "./Mariela";
