@@ -1,5 +1,5 @@
 import React from 'react';
-
+import logoBlack from "../assets/logo1.png";
 import { FaFacebookF, FaInstagram, FaPinterestP } from "react-icons/fa";
 import { IoMailOutline } from "react-icons/io5";
 
@@ -40,7 +40,7 @@ const Footer = () => {
             <div className="flex flex-col lg:items-center lg:border-x border-white/10 lg:px-10 py-4">
 
               <img
-                src="/src/assets/logo2.png"
+                src={logoBlack}
                 className="w-30 filter"
               />
 

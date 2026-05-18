@@ -27,7 +27,7 @@ const Nav = ({ setMenuOpen }) => {
         className="fixed top-3 px-4 text-4xl text-[#e8b8d8] md:hidden z-50 bg-white/30 backdrop-blur-xl p-2 rounded-full flex items-center justify-between w-full"
       >
         <a href="/" className="hover:text-[#f8e8f0] transition-colors">
-          <img src="/src/assets/logo-black.png" alt="logo" className="w-12 h-12"/>
+          <img src={logoBlack} alt="logo" className="w-12 h-12"/>
         </a>
 
         <IoMenu onClick={() => setMenuOpen(true)} />
