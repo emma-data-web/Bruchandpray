@@ -41,7 +41,7 @@ const Footer = () => {
 
               <img
                 src={logoBlack}
-                className="w-50 h-20 mb-4"
+                className="w-30 h-20 mb-4"
                 alt="Brunch and Pray Logo"
               />
 
