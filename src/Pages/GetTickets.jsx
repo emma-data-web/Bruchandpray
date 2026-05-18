@@ -6,10 +6,10 @@ import { toast, SleekToast } from 'sleek-toast';
 const events = [
   {
     id: 1,
-    title: 'Mother is Gold',
-    date: 'May 2, 2026',
-    location: 'Rancho Cucamonga, CA',
-    description: 'A beautiful brunch experience honouring mothers, daughters and sisters',
+    title: 'About Founder',
+    // date: 'May 2, 2026',
+    // location: 'Rancho Cucamonga, CA',
+    description: 'The words in this book are drawn from the Bible. They are specially chosen to build and inspire our children. By regularly reading and internalizing these words, our children are expected to grow up to become great role models and respectable leaders in our communities.',
   },
 ];
 
@@ -175,30 +175,49 @@ function CheckoutForm() {
             </p> */}
           </div>
 
-          <div className="bg-white rounded-3xl p-8 md:p-12 mb-16 border border-[#2e2c2b]/10 flex justify-between lg:flex-row flex-col gap-6 shadow-xl">
-            <div className="grid md:grid-cols-3 gap-8">
-              {events.map((event) => (
-                <div key={event.id}>
-                  <h3 className="text-2xl font-bold text-[#d84136] mb-4">{event.title}</h3>
-                  <div className="space-y-4 text-[#2e2c2b]/70">
-                    <p>
-                      <span className="font-semibold text-[#2e2c2b]">Date:</span> {event.date}
-                    </p>
-                    <p>
-                      <span className="font-semibold text-[#2e2c2b]">Location:</span> {event.location}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div className="bg-white rounded-[40px] p-8 md:p-14 mb-16 border border-[#2e2c2b]/10 shadow-2xl">
+  
+  <div className="flex flex-col lg:flex-row items-center gap-14">
 
-            <button
-              onClick={() => setSelectedTicket(ticketItem)}
-              className="bg-[#d84136] text-white py-3 px-6 rounded-xl cursor-pointer font-bold hover:bg-[#2e2c2b] hover:text-white transition-all whitespace-nowrap"
-            >
-              Get Tickets
-            </button>
+    {/* Image Section */}
+    <div className="w-full lg:w-[38%]">
+      <img
+        src="/founder-pic.jpeg"
+        alt="Founder"
+        className="w-full h-[500px] object-cover rounded-[30px] shadow-lg"
+      />
+    </div>
+
+    {/* Text Section */}
+    <div className="flex-1 w-full">
+      {events.map((event) => (
+        <div key={event.id} className="w-full">
+
+          <h3 className="text-4xl font-bold text-[#d84136] mb-8 leading-tight">
+            {event.title}
+          </h3>
+
+          <div className="space-y-6 text-[#2e2c2b]/80 text-lg leading-10">
+
+            {/* <p>
+              <span className="font-semibold text-[#2e2c2b]">Date:</span> {event.date}
+            </p>
+
+            <p>
+              <span className="font-semibold text-[#2e2c2b]">Location:</span> {event.location}
+            </p> */}
+
+            <p className="w-full">
+              {event.description}
+            </p>
+
           </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</div>
 
           
 
