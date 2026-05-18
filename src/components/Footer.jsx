@@ -1,5 +1,5 @@
 import React from 'react';
-import logoBlack from "../assets/logo1.png";
+import logoBlack from "../assets/logo2.png";
 import { FaFacebookF, FaInstagram, FaPinterestP } from "react-icons/fa";
 import { IoMailOutline } from "react-icons/io5";
 
@@ -41,7 +41,7 @@ const Footer = () => {
 
               <img
                 src={logoBlack}
-                className="w-30 filter"
+                className="w-50 h-20 mb-4"
                 alt="Brunch and Pray Logo"
               />
 

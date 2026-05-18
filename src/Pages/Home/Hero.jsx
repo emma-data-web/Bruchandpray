@@ -1,9 +1,9 @@
 import "./Hero.css";
-import {circle1} from "../../../src/assets/circle-1.png";
-import {circle2} from "../../../src/assets/circle-2.png";
-import {circle3} from "../../../src/assets/circle-3.png";
-import {circle4} from "../../../src/assets/circle-4.png";
-import {circle5} from "../../../src/assets/circle-5.png";
+import circle1 from "../../../src/assets/circle-1.png";
+import circle2 from "../../../src/assets/circle-2.png";
+import circle3 from "../../../src/assets/circle-3.png";
+import circle4 from "../../../src/assets/circle-4.png";
+import circle5 from "../../../src/assets/circle-5.png";
 
 const Hero = () => {
   return (
