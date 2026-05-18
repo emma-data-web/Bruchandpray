@@ -168,11 +168,11 @@ function CheckoutForm() {
                 <h3 className="text-2xl font-bold text-[#d84136] mb-2">{ticketItem.type}</h3>
                 <p className="text-sm uppercase tracking-[0.3em] text-[#2e2c2b]/60">{ticketItem.note}</p>
               </div>
-              <p className="text-3xl font-black text-[#2e2c2b]">${ticketItem.price}</p>
+              {/* <p className="text-3xl font-black text-[#2e2c2b]">${ticketItem.price}</p> */}
             </div>
-            <p className="text-sm text-[#2e2c2b]/70">
+            {/* <p className="text-sm text-[#2e2c2b]/70">
               Enter the number of tickets you want to purchase, then complete checkout in the popup.
-            </p>
+            </p> */}
           </div>
 
           <div className="bg-white rounded-3xl p-8 md:p-12 mb-16 border border-[#2e2c2b]/10 flex justify-between lg:flex-row flex-col gap-6 shadow-xl">
