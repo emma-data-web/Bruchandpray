@@ -219,15 +219,84 @@
 
 /* ───────── RESPONSIVE MOBILE CODEEEE ───────── */
 @media (max-width: 768px) {
+  /* hero spacing */
+  .bp-center {
+    padding: 20px 18px;
+    max-width: 100%;
+  }
+  
+  /* top tag */
+  .bp-tag {
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    padding: 6px 12px;
+    margin-bottom: 18px;
+  }
 
+  /* brunch & pray title */
+  .bp-title {
+    font-size: clamp(2.7rem, 10vw, 4rem);
+    white-space: nowrap;
+    line-height: 1.05;
+    margin-bottom: 8px;
+  }
+
+  /* decorative arrow */
+  .bp-arrow-line {
+    height: 22px;
+  }
+
+  .bp-arrow-head {
+    width: 8px;
+    height: 8px;
+  }
+
+  /* tagline */
+  .bp-tagline {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    max-width: 320px;
+    margin-bottom: 24px;
+  }
+
+  /* buttons */
+  .bp-btns {
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .bp-btn-primary,
+  .bp-btn-ghost {
+    padding: 12px 22px;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+  }
+
+  /* proof section */
+  .bp-proof {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .bp-proof-text {
+    font-size: 11px;
+  }
+
+  /* avatar circles */
+  .bp-avatars span {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* animated rings */
   .bp-ring:nth-child(1) {
-    width: 120vw;
-    height: 120vw;
+    width: 115vw;
+    height: 115vw;
   }
 
   .bp-ring:nth-child(2) {
-    width: 160vw;
-    height: 160vw;
+    width: 150vw;
+    height: 150vw;
   }
 
 }

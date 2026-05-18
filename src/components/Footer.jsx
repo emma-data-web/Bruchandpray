@@ -42,6 +42,7 @@ const Footer = () => {
               <img
                 src={logoBlack}
                 className="w-30 filter"
+                alt="Brunch and Pray Logo"
               />
 
               <div className="flex items-center gap-6 text-2xl">

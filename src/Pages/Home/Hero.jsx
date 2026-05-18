@@ -47,11 +47,11 @@ const Hero = () => {
 
         <div className="bp-people">
           <div className="bp-avatars">
-            <span><img src={circle1} alt="one"/></span>
-            <span><img src={circle2} alt="two"/></span>
-            <span><img src={circle3} alt="three"/></span>
-            <span><img src={circle4} alt="four"/></span>
-            <span><img src={circle5} alt="five"/></span>
+            <span><img src={circle1} alt="one" width="100" height="100"/></span>
+            <span><img src={circle2} alt="two" width="100" height="100"/></span>
+            <span><img src={circle3} alt="three" width="100" height="100"/></span>
+            <span><img src={circle4} alt="four" width="100" height="100"/></span>
+            <span><img src={circle5} alt="five" width="100" height="100"/></span>
           </div>
           <div className="bp-person-text">
             <p><strong>30+ women</strong> gathered together </p> 

@@ -23,9 +23,8 @@ const Nav = ({ setMenuOpen }) => {
       </nav>
 
       {/* --- MOBILE HAMBURGER --- */}
-      <div
-        className="fixed top-3 px-4 text-4xl text-[#e8b8d8] md:hidden z-50 bg-white/30 backdrop-blur-xl p-2 rounded-full flex items-center justify-between w-full"
-      >
+      <div className="fixed top-3 px-4 text-4xl text-black md:hidden z-50 bg-white/90 backdrop-blur-xl p-2 rounded-full flex
+      items-center justify-between w-[95%] left-1/2 -translate-x-1/2 shadow-xl">
         <a href="/" className="hover:text-[#f8e8f0] transition-colors">
           <img src={logoBlack} alt="logo" className="w-12 h-12"/>
         </a>
