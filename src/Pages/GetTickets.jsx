@@ -15,7 +15,7 @@ const events = [
 
 const ticketItem = {
   id: 'general-ticket',
-  type: 'BRUNCH TICKET',
+  type: 'Mission',
   price: 35,
   note: 'One ticket for your brunch experience',
 };
@@ -154,16 +154,13 @@ function CheckoutForm() {
         <div className="max-w-6xl mx-auto">
 
           <div>
-            <img src="/logo-white.jpeg" />
+            <img src="/logo-white.jpeg" className='w-[80%] mx-auto' />
           </div>
-          {/* <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-7xl font-black text-[#2e2c2b] mb-4 tracking-wide pt-20">
-              GET YOUR TICKETS
-            </h1>
+          <div className="text-center mb-16">
             <p className="text-lg text-[#2e2c2b]/70 max-w-2xl mx-auto leading-relaxed">
-              Join us for a curated gathering that brings women together to uplift & empower through purposeful living and practical Christianity.
+              Bringing woman together to grow in faith, purpose, and practical Christain living.
             </p>
-          </div> */}
+          </div>
 
           <div className="rounded-3xl border border-[#2e2c2b]/10 p-8 bg-white shadow-xl mb-16">
             <div className="mb-6 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
