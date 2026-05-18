@@ -1,51 +1,33 @@
 import { FaFacebookF, FaInstagram, FaPinterestP } from "react-icons/fa";
-import { IoMailOutline, IoClose, IoMenu } from "react-icons/io5";
+import { IoMailOutline, IoClose } from "react-icons/io5";
 import { useState } from "react";
-import logoBlack from "../assets/logo-black.png";
+import Nav from "./Nav";
+import Footer from "./footer";
 
 const Layout = ({ children }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <div className="bg-gradient-to-br from-[#2a0f2e] via-[#3a1a3e] to-[#4a233e] min-h-screen font-sans text-[#f8e8f0] w-full">
-      {/* --- DESKTOP SIDE NAVIGATION (STUCK TO RIGHT) --- */}
-     <nav className="fixed bg-white/95 backdrop-blur-xl border border-white/20 py-4 rounded-full left-1/2 -translate-x-1/2 my-4 shadow-2xl px-9 hidden lg:flex gap-12 text-[11px] tracking-[0.1em] text-[#6A2B73] z-40 font-bold transition-opacity hover:opacity-100 opacity-90 items-center w-[80%] justify-center">
-  
-  <a href="/" className="hover:text-[#2e2c2b] mr-6">
-    <img src={logoBlack} alt="logo" className="w-12 h-10"/>
-  </a>
 
-  <a href="/mission" className="hover:text-[#2e2c2b] whitespace-nowrap">MISSION</a>
-  <a href="/book" className="hover:text-[#2e2c2b]">BOOK</a>
-  <a href="/about" className="hover:text-[#2e2c2b] whitespace-nowrap">ABOUT FOUNDER</a>
-  <a href="/events" className="hover:text-[#2e2c2b] whitespace-nowrap">EVENTS</a>
-  <a href="/get-tickets" className="hover:text-[#2e2c2b] whitespace-nowrap">GET TICKETS</a>
-
-</nav>
-      {/* --- MOBILE HAMBURGER --- */}
-      <div
-        className="fixed top-3 px-4 text-4xl text-[#e8b8d8] md:hidden z-50 bg-white/30 backdrop-blur-xl p-2 rounded-full flex items-center justify-between w-full"
-      >
-        <a href="/" className="hover:text-[#f8e8f0] transition-colors">
-         <img src="/src/assets/logo-black.png" alt="logo" className="w-12 h-12"/>
-        </a>
-        <IoMenu 
-        onClick={() => setMenuOpen(true)} />
-      </div>
+      {/* --- NAV COMPONENT --- */}
+      <Nav setMenuOpen={setMenuOpen} />
 
       {/* --- MOBILE OVERLAY MENU --- */}
       {menuOpen && (
         <div className="fixed inset-0 bg-[#2a0f2e]/95 backdrop-blur-xl text-[#f8e8f0] flex items-center justify-center z-[100] transition-all">
+
           <button
             className="absolute top-8 right-8 text-4xl text-[#e8b8d8]"
             onClick={() => setMenuOpen(false)}
           >
             <IoClose />
           </button>
-          
+
           <div className="flex flex-col gap-6 text-center">
             <h2 className="text-[#e8b8d8] text-xl mb-4 tracking-widest">MENU</h2>
-            {["HOME", "ABOUT", "MISSION",  "EVENTS", "BOOK", "GET E-TICKET"].map((link) => (
+
+            {["HOME", "ABOUT", "MISSION", "EVENTS", "BOOK", "GET E-TICKET"].map((link) => (
               <a
                 key={link}
                 href={`/${link.toLowerCase()}`}
@@ -56,57 +38,15 @@ const Layout = ({ children }) => {
               </a>
             ))}
           </div>
+
         </div>
       )}
 
       {/* --- MAIN PAGE CONTENT --- */}
       <main className="relative">{children}</main>
 
-      {/* --- REFINED FOOTER --- */}
-      <footer className="bg-gradient-to-r from-[#1a0a1e] via-[#2a0f2e] to-[#3a1a3e] w-full lg:pt-32 pt-4 pb-4 lg:pb-12 text-[#d8b8d0] border-t border-[#e8b8d8]/20">
-        <div className="max-w-7xl mx-auto lg:px-10 px-2">
-          
-          <div className="flex flex-col lg:grid lg:grid-cols-3 lg:items-center gap-16 mb-24">
-            
-            {/* Left Stack */}
-            <div className="flex flex-col gap-3 text-sm tracking-[0.2em] items-start">
-              <a href="/" className="hover:text-[#e8b8d8] transition-colors">HOME</a>
-              <a href="/mission" className="hover:text-[#e8b8d8] transition-colors">MISSION STATEMENT</a>
-              <a href="/book" className="hover:text-[#e8b8d8] transition-colors">BOOKS</a><a href="/freebie" className="hover:text-[#e8b8d8] transition-colors lg:hidden flex">PURPOSE & OUTREACH</a>
-              <a href="/shop" className="hover:text-[#e8b8d8] transition-colors lg:hidden flex">ABOUT FOUNDER</a>
-            </div>
+      <Footer />
 
-            {/* Middle Branding */}
-            <div className="flex flex-col lg:items-center lg:border-x border-[#d8b8d0]/30 lg:px-10 py-4">
-              <img src="/src/assets/logo-silver.png" className="w-30 filter "/>
-              <div className="flex items-center gap-6 text-2xl">
-                <FaFacebookF className="cursor-pointer hover:text-[#f8e8f0] transition-all hover:-translate-y-1" />
-                <a href="https://instagram.com/brunchandpray"><FaInstagram className="cursor-pointer hover:text-[#f8e8f0] transition-all hover:-translate-y-1" /></a>
-                <FaPinterestP className="cursor-pointer hover:text-[#f8e8f0] transition-all hover:-translate-y-1" />
-                <IoMailOutline className="cursor-pointer hover:text-[#f8e8f0] transition-all hover:-translate-y-1" />
-              </div>
-            </div>
-
-            {/* Right Stack */}
-            <div className="lg:flex hidden flex-col gap-3 text-sm tracking-[0.2em] items-center lg:items-end text-right">
-              <a href="/freebie" className="hover:text-[#e8b8d8] transition-colors">PURPOSE & OUTREACH</a>
-              <a href="/shop" className="hover:text-[#e8b8d8] transition-colors">ABOUT FOUNDER</a>
-              {/* <a href="/contact" className="hover:text-[#e8b8d8] transition-colors">CONTACT</a> */}
-            </div>
-          </div>
-
-          {/* Divider & Copyright */}
-          <div className="pt-4 border-t border-[#d8b8d0]/30 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] tracking-[0.4em] uppercase opacity-60">
-            <p>&copy; 2026 BRUNCH AND PRAY</p>
-            {/* <div className="flex gap-4">
-              <a href="#" className="hover:text-[#f8e8f0]">TERMS</a>
-              <span>|</span>
-              <a href="#" className="hover:text-[#f8e8f0]">PRIVACY</a>
-            </div> */}
-            <p>DESIGNED FOR PURPOSE</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };

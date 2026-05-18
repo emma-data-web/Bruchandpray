@@ -1,9 +1,39 @@
+import logoBlack from "../assets/logo1.png";
+import { IoMenu } from "react-icons/io5";
 
-
-const nav = () => {
+const Nav = ({ setMenuOpen }) => {
   return (
-    <div>nav</div>
-  )
-}
+    <>
+      {/* --- DESKTOP NAVIGATION --- */}
+      <nav className="fixed bg-white/95 backdrop-blur-xl border border-white/20 py-4
+      rounded-full left-1/2 -translate-x-1/2 my-4 shadow-2xl px-9 hidden lg:flex gap-12 text-[11px]
+      text-black z-40 font-bold transition-opacity hover:opacity-100 opacity-90
+      items-center w-[80%] justify-center">
 
-export default nav
+        <a href="/" className="hover:text-black mr-6">
+          <img src={logoBlack} alt="logo" className="w-12 h-10"/>
+        </a>
+
+        <a href="/mission" className="hover:text-[#F39221] whitespace-nowrap">MISSION</a>
+        <a href="/book" className="hover:text-[#F39221]">BOOK</a>
+        <a href="/about" className="hover:text-[#F39221] whitespace-nowrap">ABOUT FOUNDER</a>
+        <a href="/events" className="hover:text-[#F39221] whitespace-nowrap">EVENTS</a>
+        <a href="/get-tickets" className="hover:text-[#F39221] whitespace-nowrap">GET TICKETS</a>
+
+      </nav>
+
+      {/* --- MOBILE HAMBURGER --- */}
+      <div
+        className="fixed top-3 px-4 text-4xl text-[#e8b8d8] md:hidden z-50 bg-white/30 backdrop-blur-xl p-2 rounded-full flex items-center justify-between w-full"
+      >
+        <a href="/" className="hover:text-[#f8e8f0] transition-colors">
+          <img src="/src/assets/logo-black.png" alt="logo" className="w-12 h-12"/>
+        </a>
+
+        <IoMenu onClick={() => setMenuOpen(true)} />
+      </div>
+    </>
+  );
+};
+
+export default Nav;

@@ -12,14 +12,9 @@ const Home = () => {
     <Layout>
       <div className="bg-[#ffffff] w-full overflow-x-hidden font-sans text-[#2e2c2b]">
         <Hero />
-      
-
-
         <Voice />
         <Mariela />
-        <Download />
-        
-        
+        <Download />    
         {/* Dark Mode Break for Bust a Move */}
         <div className="rounded-t-[100px]">
           <Bust />

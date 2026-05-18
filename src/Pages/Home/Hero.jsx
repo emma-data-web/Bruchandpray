@@ -4,13 +4,13 @@ const Hero = () => {
   return (
     <section className="bp-hero">
 
-      {/* BIG BACKGROUND RINGS (ONLY 2 NOW) */}
+      {/* FIRST TWO MAJOR BIG BACKGROUND RINGS */}
       <div className="bp-rings">
         <span className="bp-ring" />
         <span className="bp-ring" />
       </div>
 
-      {/* CENTER CONTENT */}
+      {/* THE main CENTER CONTENTS */}
       <div className="bp-center">
 
         <div style={{ marginTop: "72px" }} />
@@ -24,7 +24,7 @@ const Hero = () => {
           Brunch <span>&amp;</span> Pray
         </h1>
 
-        {/* 👇 NEW ARROW */}
+        {/* LITTLE CUSTOMIZED ARROW */}
         <div className="bp-arrow-wrap">
           <span className="bp-arrow-line" />
           <span className="bp-arrow-head" />
@@ -40,7 +40,7 @@ const Hero = () => {
           <button className="bp-btn-ghost">Our Mission</button>
         </div>
 
-        <div className="bp-proof">
+        <div className="bp-people">
           <div className="bp-avatars">
             <span><img src="/src/assets/circle-1.png" alt="one"/></span>
             <span><img src="/src/assets/circle-2.png" alt="two"/></span>
@@ -48,9 +48,9 @@ const Hero = () => {
             <span><img src="/src/assets/circle-4.png" alt="four"/></span>
             <span><img src="/src/assets/circle-5.png" alt="five"/></span>
           </div>
-          <div className="bp-proof-text">
-            <strong>30+ women</strong>
-            gathered together
+          <div className="bp-person-text">
+            <p><strong>30+ women</strong> gathered together </p> 
+           
           </div>
         </div>
 

@@ -11,7 +11,7 @@ const Instagram = () => {
   return (
     <section className='relative py-32 flex flex-col items-center overflow-hidden rounded-t-[100px]'>
       {/* Background Decorative Text */}
-      <h1 className='absolute top-10 font-["Bebas_Neue"] text-[15rem] md:text-[25rem] opacity-[0.02] select-none pointer-events-none'>
+      <h1 className='absolute top-10 font-["Bebas_Neue"] text-[15rem] md:text-[25rem] opacity-[0.02]'>
         COMMUNITY
       </h1>
 

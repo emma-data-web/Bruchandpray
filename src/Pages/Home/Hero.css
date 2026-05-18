@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap');
 
-/* ───────── ROOT ───────── */
+/* Hero section.....asper to control the full hero section area on the page */
 .bp-hero {
   min-height: 100vh;
   background: #ffffff;
@@ -12,16 +13,8 @@
   font-family: 'DM Sans', sans-serif;
 }
 
-/* subtle glow layer */
-.bp-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at center, rgba(130, 0, 200, 0.05), transparent 60%);
-  z-index: 0;
-}
 
-/* ───────── BIG ANIMATED RINGS (ONLY 2 NOW) ───────── */
+/* ───────── The two big animated rings together ───────── */
 .bp-rings {
   position: absolute;
   inset: 0;
@@ -34,24 +27,9 @@
 .bp-ring {
   position: absolute;
   border-radius: 50%;
-  border: 2px solid rgba(130, 0, 200, 0.28);
-  box-shadow: 0 0 120px rgba(130, 0, 200, 0.10);
+  border: 2px solid rgba(220, 99, 1, 0.28);
+  box-shadow: 0 0 120px rgba(220, 99, 1, 0.10);
   animation: floatRing 7s ease-in-out infinite;
-}
-
-/* OUTER RING */
-.bp-ring:nth-child(1) {
-  width: 750px;
-  height: 750px;
-  opacity: 0.7;
-}
-
-/* BIGGEST EDGE RING */
-.bp-ring:nth-child(2) {
-  width: 1100px;
-  height: 1100px;
-  opacity: 0.5;
-  animation-delay: 2s;
 }
 
 @keyframes floatRing {
@@ -60,7 +38,23 @@
   100% { transform: scale(0.98); opacity: 0.4; }
 }
 
-/* ───────── CENTER CONTENT ───────── */
+/* The inner ring*/
+.bp-ring:nth-child(1) {
+  width: 750px;
+  height: 750px;
+  opacity: 0.7;
+}
+
+/* The outer ring */
+.bp-ring:nth-child(2) {
+  width: 1100px;
+  height: 1100px;
+  opacity: 0.5;
+  animation-delay: 2s;
+}
+
+
+/* ───────── the main center contents ───────── */
 .bp-center {
   position: relative;
   z-index: 5;
@@ -79,8 +73,8 @@
   font-size: 11px;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: #8200C8;
-  border: 1px solid rgba(130, 0, 200, 0.2);
+  color: #F39221;
+  border: 1px solid rgba(220, 99, 1, 0.2);
   margin-bottom: 24px;
 }
 
@@ -102,10 +96,13 @@
 }
 
 .bp-title span {
-  color: #8200C8;
+  color: #c86400;
+  font-family: 'Rouge Script', cursive;
+  font-size: 1.2em;
+  font-weight: 400;
 }
 
-/* ───────── ARROW (NEW) ───────── */
+/* ───────── customized arrow ───────── */
 .bp-arrow-wrap {
   display: flex;
   flex-direction: column;
@@ -116,24 +113,24 @@
 .bp-arrow-line {
   width: 2px;
   height: 30px;
-  background: rgba(130, 0, 200, 0.4);
+  background: rgba(255, 116, 3, 0.4);
 }
 
 .bp-arrow-head {
   width: 10px;
   height: 10px;
-  border-left: 2px solid rgba(130, 0, 200, 0.4);
-  border-bottom: 2px solid rgba(130, 0, 200, 0.4);
+  border-left: 2px solid rgba(255, 118, 6, 0.4);
+  border-bottom: 2px solid rgba(220, 99, 1, 0.4);
   transform: rotate(-45deg);
   margin-top: -4px;
 }
 
 /* TAGLINE */
 .bp-tagline {
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 300;
-  color: #4a3050;
-  line-height: 1.8;
+  color: #1a001f;;
+  line-height: 1.6;
   max-width: 520px;
   margin: 0 auto 32px;
 }
@@ -148,7 +145,7 @@
 }
 
 .bp-btn-primary {
-  background: #B21E29;
+  background: #F39221;
   color: white;
   border: none;
   padding: 14px 30px;
@@ -166,8 +163,8 @@
 
 .bp-btn-ghost {
   background: transparent;
-  border: 1px solid #8200C8;
-  color: #8200C8;
+  border: 1px solid #F39221;
+  color: #F39221;
   padding: 14px 30px;
   border-radius: 999px;
   font-size: 11px;
@@ -177,12 +174,12 @@
 }
 
 .bp-btn-ghost:hover {
-  background: #8200C8;
+  background: #F39221;
   color: white;
 }
 
-/* PROOF */
-.bp-proof {
+/* people cirlce images */
+.bp-people {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -198,7 +195,7 @@
   height: 36px;
   border-radius: 50%;
   background: #eee;
-  border: 2px solid white;
+  border: 0px solid white;
   margin-left: -10px;
   display: flex;
   align-items: center;
@@ -210,17 +207,17 @@
   margin-left: 0;
 }
 
-.bp-proof-text {
+.bp-person-text {
   font-size: 13px;
-  color: #7a5090;
+  color: #F39221;
 }
 
-.bp-proof-text strong {
-  display: block;
-  color: #8200C8;
+.bp-person-text strong {
+  /* display: block; */
+  color: #F39221;
 }
 
-/* ───────── RESPONSIVE ───────── */
+/* ───────── RESPONSIVE MOBILE CODEEEE ───────── */
 @media (max-width: 768px) {
 
   .bp-ring:nth-child(1) {

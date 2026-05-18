@@ -3,10 +3,10 @@ const events = [
   { id: 2, day: "WED", date: "14-02-25", title: "Youth Revival", desc: "Breaking chains of fear and stepping into purpose." },
   { id: 3, day: "SUN", date: "18-02-25", title: "Sunday Service", desc: "A powerful time of worship and community." },
 ];
-
+// #F39221;
 const Voice = () => {
   return (
-    <section className="py-24 bg-[#f3e6ee] px-6">
+    <section className="py-24 bg-[#ffecd6] px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 gap-8">
         
         {/* Card 1 - White */}
@@ -30,13 +30,13 @@ const Voice = () => {
           </div>
         </div>
 
-        {/* Bottom Cards - Responsive Row on Large Screens */}
+        {/* Bottom Cards - that is the Responsive Row on Large Screens */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           
           {/* Card 2 - Purple */}
-          <div className="bg-[#6A2B73] p-10 rounded-[40px] text-white transform md:scale-105 shadow-2xl">
+          <div className="bg-black p-10 rounded-[40px] text-white transform md:scale-105 shadow-2xl">
             <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-8 -rotate-3 border border-white/20">
-              <span className="text-[#00A5BC] font-bold">02</span>
+              <span className="text-[#F39221] font-bold">02</span>
             </div>
             <h3 className="text-3xl mb-4">Books we love</h3>
             <p className="opacity-70 leading-relaxed">
