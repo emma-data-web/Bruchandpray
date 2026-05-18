@@ -17,7 +17,7 @@ const ticketItem = {
   id: 'general-ticket',
   type: 'Mission',
   price: 35,
-  note: 'One ticket for your brunch experience',
+  note: "Brunch & Pray exists to gather women for God’s glory. What began as a prompting from God in 2018 has grown into a vibrant community of women seeking a deeper relationship with Christ and meaningful connection with other faith-filled women. Our mission is to uplift, empower, and inspire women through thoughtfully curated gatherings, creative experiences, authentic community, and prayer. Through fellowship, the arts, and intentional conversations, we strive to remind women that a life rooted in God can be joyful, practical, beautiful, and full of purpose.Brunch & Pray is more than an event— it is a space where women can grow spiritually, build genuine relationships, and be encouraged to walk boldly in their God-given calling",
 };
 
 function CheckoutModal({ selectedTicket, onClose }) {
@@ -154,7 +154,7 @@ function CheckoutForm() {
         <div className="max-w-6xl mx-auto">
 
           <div>
-            <img src="/logo-white.jpeg" className='w-[80%] mx-auto' />
+            <img src="/logo-white.jpeg" className='w-[70%] mx-auto' />
           </div>
           <div className="text-center mb-16">
             <p className="text-lg text-[#2e2c2b]/70 max-w-2xl mx-auto leading-relaxed">
