@@ -13,8 +13,8 @@ const Layout = ({ children }) => {
           <img src="/logo-white.jpeg" alt="logo" className="w-12 h-10"/>
         </a>
         <a href="/mission" className="hover:text-[#2e2c2b] transition-colors whitespace-nowrap">MISSION</a>
-        <a href="/book" className="hover:text-[#2e2c2b] transition-colors">BOOK</a>
         <a href="/about" className="hover:text-[#2e2c2b] transition-colors whitespace-nowrap">ABOUT FOUNDER</a>
+        <a href="/book" className="hover:text-[#2e2c2b] transition-colors">BOOK</a>
         <a href="/events" className="hover:text-[#2e2c2b] transition-colors whitespace-nowrap">EVENTS</a>
         {/* <a href="/get-tickets" className="hover:text-[#2e2c2b] transition-colors whitespace-nowrap">GET TICKETS</a> */}
       </nav>
