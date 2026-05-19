@@ -72,7 +72,7 @@ const UpcomingEvents = () => {
                   to="/events"
                   className="mt-2 inline-flex items-center gap-2 text-[#F39221] text-xs tracking-[0.15em] uppercase hover:gap-3 transition"
                 >
-                  Learn more <span>→</span>
+                  Get Ticket <span>→</span>
                 </Link>
 
               </div>

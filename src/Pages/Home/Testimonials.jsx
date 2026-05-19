@@ -39,7 +39,7 @@ const testimonials = [
 const Testimonials = () => {
   const [index, setIndex] = useState(0);
 
-  const cardsPerView = 3;
+  const cardsPerView = 2;
   const totalPages = Math.ceil(testimonials.length / cardsPerView);
 
   const next = () => {
@@ -55,15 +55,16 @@ const Testimonials = () => {
 
       <div className="max-w-[1300px] mx-auto flex flex-col lg:flex-row gap-10">
 
-        {/* LEFT - TESTIMONIALS (DARK BROWN PANEL) */}
-        <div className="w-full lg:w-1/2 bg-[#3B2416] text-white rounded-2xl p-6 relative">
+        {/* LEFT - TESTIMONIALS (WHITE PANEL) */}
+        <div className="w-full lg:w-1/2 bg-white text-black rounded-2xl p-6 relative shadow-lg">
 
           {/* HEADER */}
           <div className="mb-6">
-            <h2 className="text-3xl md:text-5xl font-semibold text-white">
+            <h2 className="text-3xl md:text-5xl font-semibold text-black">
               Sisterhood <span className="text-[#F39221] italic">Stories</span>
             </h2>
-            <p className="text-white/70 mt-2">
+
+            <p className="text-black/60 mt-2">
               Real women, real stories, real impact.
             </p>
           </div>
@@ -71,14 +72,14 @@ const Testimonials = () => {
           {/* ARROWS */}
           <button
             onClick={prev}
-            className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-white text-[#3B2416] rounded-full hover:bg-[#F39221] hover:text-white transition"
+            className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-black text-white rounded-full hover:bg-[#F39221] transition"
           >
             ←
           </button>
 
           <button
             onClick={next}
-            className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-white text-[#3B2416] rounded-full hover:bg-[#F39221] hover:text-white transition"
+            className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-black text-white rounded-full hover:bg-[#F39221] transition"
           >
             →
           </button>
@@ -108,25 +109,27 @@ const Testimonials = () => {
                     .map((item, i) => (
                       <div
                         key={i}
-                        className="w-1/3 bg-[#4A2C1D] rounded-2xl p-5 shadow-md"
+                        className="w-1/2 bg-[#F9F9F9] rounded-xl p-5 shadow-sm flex gap-4 items-center"
                       >
-                        <div className="text-[#F39221] text-lg mb-2">
-                          ★ ★ ★
-                        </div>
 
+                        {/* IMAGE */}
                         <img
                           src={item.img}
                           alt="testimonial"
-                          className="w-12 h-12 rounded-full object-cover mb-3 border border-[#F39221]"
+                          className="w-14 h-14 rounded-full object-cover border border-[#F39221]"
                         />
 
-                        <p className="text-white/90 leading-[1.6] text-sm">
-                          “{item.text}”
-                        </p>
+                        {/* TEXT */}
+                        <div>
+                          <p className="text-black/80 text-sm leading-[1.5]">
+                            “{item.text}”
+                          </p>
 
-                        <p className="mt-3 font-semibold text-white text-sm">
-                          {item.name}
-                        </p>
+                          <p className="mt-2 font-semibold text-black text-sm">
+                            {item.name}
+                          </p>
+                        </div>
+
                       </div>
                     ))}
 
@@ -138,39 +141,47 @@ const Testimonials = () => {
           </div>
         </div>
 
-        {/* RIGHT - BOOK */}
+        {/* RIGHT - BOOK (BLACK PANEL UPDATED LAYOUT) */}
         <div className="w-full lg:w-1/2 flex justify-center">
 
-          <div className="w-[90%] bg-white rounded-2xl p-6 shadow-lg flex flex-col justify-between">
+  <div className="w-[90%] bg-black text-white rounded-2xl p-6 shadow-lg transform -rotate-3 origin-center transition-all duration-500 ease-in-out hover:rotate-0 hover:scale-[1.02]">
 
-            <div>
+    {/* TOP ROW: BOOK + TEXT */}
+    <div className="flex gap-5 items-start">
 
-              <h3 className="text-2xl font-semibold text-[#1A1A1A] mb-3">
-                Book
-              </h3>
+      {/* BOOK IMAGE */}
+      <img
+        src={bookImg}
+        alt="book"
+        className="w-[120px] h-[170px] object-cover rounded-lg"
+      />
 
-              <p className="text-[#444] leading-[1.6] text-sm mb-4">
-                The words in this book are drawn from the Bible. They are specially
-                chosen to build and inspire children to become great leaders and role models.
-              </p>
+      {/* TEXT */}
+      <div className="flex-1">
+        <h3 className="text-2xl font-semibold mb-2">
+          Book
+        </h3>
 
-              <img
-                src={bookImg}
-                alt="book"
-                className="w-full h-[220px] object-cover rounded-xl mb-4"
-              />
+        <p className="text-white/70 leading-[1.6] text-sm">
+          The words in this book are drawn from the Bible. They are specially
+          chosen to build and inspire children to become great leaders and role models.
+        </p>
+      </div>
 
-            </div>
+    </div>
 
-            <button className="bg-[#8B5E3C] text-white py-3 rounded-full uppercase text-[11px] tracking-[0.2em] hover:opacity-90 transition">
-              Get Book
-            </button>
+    {/* BUTTON */}
+    <div className="mt-6">
+      <button className="w-full bg-[#F39221] text-black py-3 rounded-full uppercase text-[11px] tracking-[0.2em] hover:opacity-90 transition">
+        Get Book
+      </button>
+    </div>
 
-          </div>
+  </div>
 
+</div>
         </div>
 
-      </div>
     </section>
   );
 };

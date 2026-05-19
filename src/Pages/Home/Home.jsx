@@ -16,19 +16,12 @@ const Home = () => {
     <Layout>
       <div className="bg-[#ffffff] w-full overflow-x-hidden font-sans text-[#2e2c2b]">
         <Hero />
-        <Mission />
-       
+        <Mission />   
         <Mariela />
+         <Testimonials />
          <UpcomingEvents />
          <PastEvents />
-        <Testimonials />
-       
-         {/* <Voice />
-        <Download />    
-        {/* Dark Mode Break for Bust a Move */}
-        {/* <div className="rounded-t-[100px]">
-          <Bust />
-          <Instagram /> */} 
+      
         </div>
       
     </Layout>

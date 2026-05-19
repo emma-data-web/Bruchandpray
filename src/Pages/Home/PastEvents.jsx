@@ -12,7 +12,7 @@ const pastEvents = [
 
 const PastEvents = () => {
   return (
-    <section className="w-full bg-[#F3E6DA] py-20 px-6 md:px-16 flex items-center">
+    <section className="w-full bg-white py-20 px-6 md:px-16 flex items-center">
 
       <div className="max-w-[1300px] mx-auto flex gap-10 items-center w-full">
 

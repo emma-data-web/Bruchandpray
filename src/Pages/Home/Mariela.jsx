@@ -19,18 +19,10 @@ const AboutFounder = () => {
               src={founderImg}
               alt="Founder"
               className="w-full h-full object-cover scale-105"
-              style={{
-                objectPosition: "70% 15%",
-                clipPath:
-                  "path('M300 0 C360 120 520 80 500 200 C480 320 600 360 460 420 C360 480 420 620 300 560 C180 620 240 480 140 420 C0 360 120 320 100 200 C80 80 240 120 300 0 Z')"
-              }}
+           
             />
 
           </div>
-
-          {/* soft fade */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent" />
-
         </div>
 
         {/* RIGHT TEXT */}
