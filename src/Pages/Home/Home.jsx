@@ -5,6 +5,10 @@ import Mariela from "./Mariela";
 import Download from "./Download";
 import Bust from "./Bust";
 import Instagram from "./Instagram";
+import Mission from "./Mision"; 
+import Testimonials from "./Testimonials";
+import UpcomingEvents from "./UpcomingEvents";
+import PastEvents from "./PastEvents";
 
 
 const Home = () => {
@@ -12,15 +16,21 @@ const Home = () => {
     <Layout>
       <div className="bg-[#ffffff] w-full overflow-x-hidden font-sans text-[#2e2c2b]">
         <Hero />
-        <Voice />
+        <Mission />
+       
         <Mariela />
+         <UpcomingEvents />
+         <PastEvents />
+        <Testimonials />
+       
+         {/* <Voice />
         <Download />    
         {/* Dark Mode Break for Bust a Move */}
-        <div className="rounded-t-[100px]">
+        {/* <div className="rounded-t-[100px]">
           <Bust />
-          <Instagram />
+          <Instagram /> */} 
         </div>
-      </div>
+      
     </Layout>
   );
 };

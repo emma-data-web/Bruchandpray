@@ -1,62 +1,65 @@
-import "./Hero.css";
-import circle1 from "../../../src/assets/circle-1.png";
-import circle2 from "../../../src/assets/circle-2.png";
-import circle3 from "../../../src/assets/circle-3.png";
-import circle4 from "../../../src/assets/circle-4.png";
-import circle5 from "../../../src/assets/circle-5.png";
+import bgPhoto from "../../../src/assets/bg-photo.jpg";
+import AnimatedLogo from "../../components/AnimatedLogo.jsx";
 
 const Hero = () => {
   return (
-    <section className="bp-hero">
+    <section
+      className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat font-sans"
+      style={{
+        backgroundImage: `url(${bgPhoto})`,
+      }}
+    >
 
-      {/* FIRST TWO MAJOR BIG BACKGROUND RINGS */}
-      <div className="bp-rings">
-        <span className="bp-ring" />
-        <span className="bp-ring" />
-      </div>
+      {/* dark cinematic overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/20 z-[1]" />
 
-      {/* THE main CENTER CONTENTS */}
-      <div className="bp-center">
+      {/* center hero content */}
+      <div className="relative z-10 flex flex-col items-center justify-center text-center w-full max-w-[850px] px-10 py-10">
 
-        <div style={{ marginTop: "72px" }} />
-
-        <div className="bp-tag">
-          <span className="bp-tag-dot" />
-          COMMUNITY · FAITH · GROWTH
+        {/* logo */}
+        <div className="mt-12">
+          <AnimatedLogo />
         </div>
 
-        <h1 className="bp-title">
-          Brunch <span>&amp;</span> Pray
-        </h1>
-
-        {/* LITTLE CUSTOMIZED ARROW */}
-        <div className="bp-arrow-wrap">
-          <span className="bp-arrow-line" />
-          <span className="bp-arrow-head" />
-        </div>
-
-        <p className="bp-tagline">
-          Where women gather around a table, share life honestly,
-          and encounter God in the middle of it all.
+        {/* hero text */}
+        <p
+          className="text-white text-[1.4rem] md:text-[1.1rem] sm:text-[1rem]
+          leading-[1.9] font-semibold max-w-[800px] mb-10"
+        >
+          Bringing{" "}
+          <span className="text-[#F39221] font-normal italic">
+            women
+          </span>{" "}
+          together to grow in faith, purpose, and practical Christian living.
         </p>
 
-        <div className="bp-btns">
-          <button className="bp-btn-primary">Join the Table</button>
-          <button className="bp-btn-ghost">Our Mission</button>
-        </div>
+        {/* buttons */}
+        <div
+          className="flex items-center justify-center gap-4 flex-row flex-wrap sm:flex-row sm:w-auto"
+        >
 
-        <div className="bp-people">
-          <div className="bp-avatars">
-            <span><img src={circle1} alt="one" width="100" height="100"/></span>
-            <span><img src={circle2} alt="two" width="100" height="100"/></span>
-            <span><img src={circle3} alt="three" width="100" height="100"/></span>
-            <span><img src={circle4} alt="four" width="100" height="100"/></span>
-            <span><img src={circle5} alt="five" width="100" height="100"/></span>
-          </div>
-          <div className="bp-person-text">
-            <p><strong>30+ women</strong> gathered together </p> 
-           
-          </div>
+          {/* primary button */}
+          <button
+            className="bg-[#D97706] text-white border-none
+            px-8 py-4 rounded-full uppercase cursor-pointer
+            text-[11px] tracking-[0.22em]
+            transition-all duration-300 ease-in-out
+            hover:bg-[#B45309] hover:-translate-y-[2px] hover:shadow-lg"
+          >
+            Join the Table
+          </button>
+
+          {/* ghost button */}
+          <button
+            className="bg-transparent border border-white text-white
+            px-8 py-4 rounded-full uppercase cursor-pointer
+            text-[11px] tracking-[0.22em]
+            transition-all duration-300 ease-in-out
+            hover:bg-white hover:text-black"
+          >
+            Upcoming Events
+          </button>
+
         </div>
 
       </div>

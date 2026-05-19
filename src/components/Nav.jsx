@@ -5,10 +5,10 @@ const Nav = ({ setMenuOpen }) => {
   return (
     <>
       {/* --- DESKTOP NAVIGATION --- */}
-      <nav className="fixed bg-white/95 backdrop-blur-xl border border-white/20 py-4
-      rounded-full left-1/2 -translate-x-1/2 my-4 shadow-2xl px-9 hidden lg:flex gap-12 text-[11px]
-      text-black z-40 font-bold transition-opacity hover:opacity-100 opacity-90
-      items-center w-[80%] justify-center">
+     <nav className="fixed bg-white/40 backdrop-blur-xl border border-orange-200/30 py-4
+rounded-full left-1/2 -translate-x-1/2 my-4 shadow-2xl px-9 hidden lg:flex gap-12 text-[11px]
+text-black z-40 font-bold transition-opacity hover:opacity-100 opacity-90
+items-center w-[80%] justify-center">
 
         <a href="/" className="hover:text-black mr-6">
           <img src={logoBlack} alt="logo" className="w-12 h-10"/>

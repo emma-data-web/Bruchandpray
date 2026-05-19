@@ -1,35 +1,84 @@
-const Mariela = () => {
+import { Link } from "react-router-dom";
+import founderImg from "../../../src/assets/founder-pic.jpeg";
+
+const AboutFounder = () => {
   return (
-    <section className="py-32 px-6 max-w-7xl mx-auto bg-[#ffffff]">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-        
-        {/* Modern Image Frame */}
-        <div className="relative group">
-          <div className="absolute -inset-4 border border-[#00A5BC]/30 lg:rounded-[60px] rounded-2xl group-hover:inset-0 transition-all duration-500" />
-          <img 
-            src="./founder.jpeg" 
-            className="lg:rounded-[60px] rounded-2xl w-full lg:h-[600px] object-cover shadow-2xl relative z-10" 
-          />
+    <section className="w-full bg-white min-h-[50vh] py-10 px-6 md:px-16 flex items-center overflow-hidden">
+
+      <div className="max-w-[1100px] mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-10">
+
+        {/* LEFT - IMAGE */}
+        <div className="relative flex items-center justify-start">
+
+          {/* glow */}
+          <div className="absolute -left-32 top-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[#F39221]/10 blur-[100px] rounded-full" />
+
+          <div className="relative w-[380px] h-[380px]">
+
+            <img
+              src={founderImg}
+              alt="Founder"
+              className="w-full h-full object-cover scale-105"
+              style={{
+                objectPosition: "70% 15%",
+                clipPath:
+                  "path('M300 0 C360 120 520 80 500 200 C480 320 600 360 460 420 C360 480 420 620 300 560 C180 620 240 480 140 420 C0 360 120 320 100 200 C80 80 240 120 300 0 Z')"
+              }}
+            />
+
+          </div>
+
+          {/* soft fade */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent" />
+
         </div>
 
-        <div>
-          <span className="text-[#B21E29] font-bold tracking-[0.4em] uppercase text-sm">Founder</span>
-          <h2 className="font-['Playfair_Display'] text-6xl md:text-8xl text-[#2e2c2b] mt-4 mb-8 leading-tight">
-            Meet Comfort Azubike
+        {/* RIGHT TEXT */}
+        <div className="text-[#1A1A1A]">
+
+          <span className="text-[#F39221] tracking-[0.3em] uppercase text-[10px] md:text-xs font-medium">
+            Founder
+          </span>
+
+          <h2 className="text-[#111111] text-2xl md:text-4xl font-semibold mt-2 mb-4 leading-tight">
+            Meet <span className="text-[#F39221] italic">Comfort Azubike</span>
           </h2>
-          <div className="space-y-6 text-[#2e2c2b]/80 text-lg leading-relaxed">
-            <p>I am dedicated to helping you be the best version of yourself and walk in your God-given purpose.</p>
-            <p className="italic border-l-4 border-[#B21E29] pl-6 font-serif">
-              "When women gather to pray, the atmosphere shifts and purpose is ignited."
-            </p>
+
+          <p className="text-[#2B2B2B] text-sm md:text-[0.95rem] leading-[1.6] mb-3">
+            I am dedicated to helping women become the best version of themselves
+            and walk boldly in their God-given purpose.
+          </p>
+
+          <p className="border-l-4 border-[#F39221] pl-4 italic text-[#333333] mb-3 text-sm">
+            “When women gather to pray, the atmosphere shifts and purpose is ignited.”
+          </p>
+
+          <p className="text-[#2B2B2B] text-sm md:text-[0.95rem] leading-[1.6]">
+            Through Brunch & Pray, I create spaces where women encounter God deeply,
+            build authentic relationships, and grow into purpose-filled lives.
+          </p>
+
+          <div className="mt-6 flex gap-3 flex-wrap">
+
+            <Link to="/founder">
+              <button className="bg-[#F39221] text-white px-5 py-2.5 rounded-full uppercase text-[10px] tracking-[0.15em] hover:opacity-90 transition">
+                Learn More
+              </button>
+            </Link>
+
+            <Link to="/contact">
+              <button className="border border-[#F39221] text-[#F39221] px-5 py-2.5 rounded-full uppercase text-[10px] tracking-[0.15em] hover:bg-[#F39221] hover:text-white transition">
+                Connect
+              </button>
+            </Link>
+
           </div>
-          <button className="mt-12 bg-[#2e2c2b] hover:bg-[#B21E29] text-white px-12 py-4 rounded-full transition-all flex items-center gap-4 group">
-            LEARN MORE <span className="group-hover:translate-x-2 transition-transform">→</span>
-          </button>
+
         </div>
+
       </div>
     </section>
   );
 };
 
-export default Mariela;
+export default AboutFounder;
