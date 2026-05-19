@@ -172,10 +172,10 @@ function CheckoutForm() {
       <section className="px-6">
         <div className="max-w-6xl mx-auto">
           <div>
-            <img src="/logo-white.jpeg" className="w-[70%] mx-auto" />
+            <img src="/logo-white.jpeg" className="md:w-[60%] mx-auto md:h-[90vh]" />
           </div>
-          <div className="text-center mb-16">
-            <p className="text-lg text-[#2e2c2b]/70 max-w-2xl mx-auto leading-relaxed">
+          <div className="text-center mb-16 px-4">
+            <p className="text-2xl md:text-4xl text-[#2e2c2b]/70 font-semibold max-w-4xl mx-auto leading-[1.8] tracking-wide">
               Bringing woman together to grow in faith, purpose, and practical
               Christain living.
             </p>
@@ -184,10 +184,10 @@ function CheckoutForm() {
           <div className="rounded-3xl border border-[#2e2c2b]/10 p-8 bg-white shadow-xl mb-16">
             <div className="mb-6 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
               <div>
-                <h3 className="text-2xl font-bold text-[#d84136] mb-2">
+                <h3 className="text-4xl font-bold text-[#d84136] mb-5">
                   {ticketItem.type}
                 </h3>
-                <p className="text-sm uppercase tracking-[0.3em] text-[#2e2c2b]/60">
+                <p className="space-y-6 text-[#2e2c2b]/80 text-lg leading-10">
                   {ticketItem.note}
                 </p>
               </div>
@@ -198,7 +198,7 @@ function CheckoutForm() {
             </p> */}
           </div>
 
-            {/* --- About Section --- */}
+          {/* --- About Section --- */}
 
           <div className="bg-white rounded-[40px] p-8 md:p-14 mb-16 border border-[#2e2c2b]/10 shadow-2xl">
             <div className="flex flex-col lg:flex-row items-center gap-14">
@@ -250,48 +250,51 @@ function CheckoutForm() {
 
               {/* Text Section */}
               <div className="flex-1 w-full">
-                  <div className="w-full">
-                    <h3 className="text-4xl font-bold text-[#d84136] mb-8 leading-tight">
-                      Book
-                    </h3>
+                <div className="w-full">
+                  <h3 className="text-4xl font-bold text-[#d84136] mb-8 leading-tight">
+                    Book
+                  </h3>
 
-                    <div className="space-y-6 text-[#2e2c2b]/80 text-lg leading-10">
-
-                      <p className="w-full">The words in this book are drawn from the Bible. They are specially chosen to build and inspire our children. By regularly reading and internalizing these words, our children are expected to grow up to become great role models and respectable leaders in our communities.</p>
-                    </div>
+                  <div className="space-y-6 text-[#2e2c2b]/80 text-lg leading-10">
+                    <p className="w-full">
+                      The words in this book are drawn from the Bible. They are
+                      specially chosen to build and inspire our children. By
+                      regularly reading and internalizing these words, our
+                      children are expected to grow up to become great role
+                      models and respectable leaders in our communities.
+                    </p>
                   </div>
+                </div>
               </div>
             </div>
           </div>
 
-           {/* --- Past Event Section --- */}
+          {/* --- Past Event Section --- */}
           <div className="bg-white rounded-[40px] p-8 md:p-14 mb-16 border border-[#2e2c2b]/10 shadow-2xl">
             <div className="flex flex-col lg:flex-row items-center gap-14">
               {/* Text Section */}
               <div className="flex-1 w-full">
-                  <div className="w-full">
-                    <h3 className="text-4xl font-bold text-[#d84136] mb-8 leading-tight">
-                      Past Event
-                    </h3>
-                  </div>
+                <div className="w-full">
+                  <h3 className="text-4xl font-bold text-[#d84136] mb-8 leading-tight">
+                    Past Event
+                  </h3>
+                </div>
               </div>
             </div>
           </div>
 
-           {/* --- Upcoming Event Section --- */}
+          {/* --- Upcoming Event Section --- */}
           <div className="bg-white rounded-[40px] p-8 md:p-14 mb-16 border border-[#2e2c2b]/10 shadow-2xl">
             <div className="flex flex-col lg:flex-row items-center gap-14">
-
               {/* Text Section */}
               <div className="flex-1 w-full">
-                  <div className="w-full">
-                    <h3 className="text-4xl font-bold text-[#d84136] mb-8 leading-tight">
-                      Upcoming Event
-                    </h3>
+                <div className="w-full">
+                  <h3 className="text-4xl font-bold text-[#d84136] mb-8 leading-tight">
+                    Upcoming Event
+                  </h3>
 
-                    <div className="space-y-6 text-[#2e2c2b]/80 text-lg leading-10">
-                    </div>
-                  </div>
+                  <div className="space-y-6 text-[#2e2c2b]/80 text-lg leading-10"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -330,6 +333,16 @@ function CheckoutForm() {
                 </p>
               </div>
             </div>
+
+            {/* Donate Button */}
+            <div className="flex justify-center mt-16">
+              <a
+                href="/donate"
+                className="bg-[#d84136] hover:bg-white hover:text-[#2e2c2b] text-white px-10 py-4 rounded-full text-sm md:text-base font-bold tracking-[0.25em] transition-all duration-300 shadow-lg hover:scale-105"
+              >
+                DONATE
+              </a>
+            </div>
           </div>
 
           <div className="mt-16 text-center text-[#2e2c2b]/70">
@@ -342,7 +355,7 @@ function CheckoutForm() {
                 Contact us
               </a>
             </p>
-            <p className="text-xs opacity-60">
+            <p className="text-xs opacity-60 mb-10">
               All ticket sales are final. Please review our refund policy before
               purchasing.
             </p>
