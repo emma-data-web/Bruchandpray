@@ -55,7 +55,9 @@ const testimonials = [
 const Testimonials = () => {
   const [currentPage, setCurrentPage] = useState(0);
 
-  const testimonialsPerPage = 3;
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+
+  const testimonialsPerPage = isMobile ? 1 : 3;
 
   const totalPages = Math.ceil(
     testimonials.length / testimonialsPerPage
@@ -75,33 +77,25 @@ const Testimonials = () => {
 
   return (
     <section className="w-full bg-[#FFF8F1] py-20 px-5 md:px-10 overflow-hidden">
-{/* HEADER */}
-<div className="text-center mb-14">
 
-  <h2
-    className="
-      text-[#F39221]
-      text-[2.3rem]
-      sm:text-[2.7rem]
-      md:text-5xl
-      font-semibold
-      italic
-      mb-5
-    "
-  >
-    Testimonials
-  </h2>
+      {/* HEADER */}
+      <div className="text-center mb-14">
 
-        <p
+        <h2
           className="
-            text-[#555]
-            text-sm
-            md:text-[15px]
-            leading-[1.9]
-            max-w-[750px]
-            mx-auto
+            text-[#F39221]
+            text-[2.3rem]
+            sm:text-[2.7rem]
+            md:text-5xl
+            font-semibold
+            italic
+            mb-5
           "
         >
+          Testimonials
+        </h2>
+
+        <p className="text-[#555] text-sm md:text-[15px] leading-[1.9] max-w-[750px] mx-auto">
           Hear from women whose lives have been transformed
           through worship gatherings, mentorship, faith,
           healing, and community experiences.
@@ -114,198 +108,148 @@ const Testimonials = () => {
 
         {/* SLIDER TRACK */}
         <div
-          className="
-            flex
-            transition-transform
-            duration-700
-            ease-in-out
-          "
+          className="flex transition-transform duration-700 ease-in-out"
           style={{
             transform: `translateX(-${currentPage * 100}%)`,
           }}
         >
 
-          {Array.from({ length: totalPages }).map(
-            (_, pageIndex) => {
+          {Array.from({ length: totalPages }).map((_, pageIndex) => {
 
-              const start =
-                pageIndex * testimonialsPerPage;
+            const start = pageIndex * testimonialsPerPage;
 
-              const pageItems = testimonials.slice(
-                start,
-                start + testimonialsPerPage
-              );
+            const pageItems = testimonials.slice(
+              start,
+              start + testimonialsPerPage
+            );
 
-              return (
-                <div
-                  key={pageIndex}
-                  className="
-                    min-w-full
-                    grid
-                    grid-cols-1
-                    lg:grid-cols-3
-                    gap-8
-                  "
-                >
+            return (
+              <div
+                key={pageIndex}
+                className="min-w-full grid grid-cols-1 lg:grid-cols-3 gap-8"
+              >
 
-                  {pageItems.map((item) => (
-                    <div
-                      key={item.id}
-                      className="
-                        bg-white
-                        rounded-[28px]
-                        overflow-hidden
-                        shadow-sm
-                        border
-                        border-[#F39221]/10
-                        hover:shadow-xl
-                        transition-all
-                        duration-300
-                      "
-                    >
+                {pageItems.map((item) => (
+                  <div
+                    key={item.id}
+                    className="
+                      bg-white
+                      rounded-[28px]
+                      overflow-hidden
+                      shadow-sm
+                      border
+                      border-[#F39221]/10
+                      hover:shadow-xl
+                      transition-all
+                      duration-300
+                    "
+                  >
 
-                      {/* CONTENT */}
-                      <div className="p-8">
+                    <div className="p-8">
 
-                        {/* TOP */}
-                        <div className="flex items-center gap-2 mb-2">
+                      {/* TOP */}
+                      <div className="flex items-center gap-2 mb-2">
 
-                          {/* IMAGE */}
-                          <div
-                            className="
-                              w-[65px]
-                              h-[65px]
-                              rounded-full
-                              overflow-hidden
-                              flex-shrink-0
-                            "
-                          >
-
-                            <img
-                              src={item.image}
-                              alt={item.name}
-                              className="
-                                w-full
-                                h-full
-                                object-cover
-                                transition-transform
-                                duration-700
-                                hover:scale-105
-                              "
-                            />
-
-                          </div>
-
-                          {/* QUOTE */}
-                          <div
-                            className="
-                              text-[#F39221]
-                              text-5xl
-                              leading-none
-                              mt-2
-                            "
-                          >
-                            ”
-                          </div>
-
+                        <div className="w-[65px] h-[65px] rounded-full overflow-hidden flex-shrink-0">
+                          <img
+                            src={item.image}
+                            alt={item.name}
+                            className="w-full h-full object-cover"
+                          />
                         </div>
 
-                        {/* TEXT */}
-                        <p
-                          className="
-                            text-[#444]
-                            leading-[1.8]
-                            text-sm
-                            md:text-[15px]
-                            mb-5
-                          "
-                        >
-                          {item.text}
-                        </p>
-
-                        {/* USER */}
-                        <div>
-
-                          <h4
-                            className="
-                              font-semibold
-                              text-black
-                              text-lg
-                            "
-                          >
-                            {item.name}
-                          </h4>
-
-                          <p
-                            className="
-                              text-[#777]
-                              text-sm
-                              mt-[1px]
-                            "
-                          >
-                            {item.role}
-                          </p>
-
+                        <div className="text-[#F39221] text-5xl leading-none mt-2">
+                          ”
                         </div>
 
                       </div>
 
-                    </div>
-                  ))}
+                      {/* TEXT */}
+                      <p className="text-[#444] leading-[1.8] text-sm md:text-[15px] mb-5">
+                        {item.text}
+                      </p>
 
-                </div>
-              );
-            }
-          )}
+                      <h4 className="font-semibold text-black text-lg">
+                        {item.name}
+                      </h4>
+
+                      <p className="text-[#777] text-sm mt-[1px]">
+                        {item.role}
+                      </p>
+
+                    </div>
+
+                  </div>
+                ))}
+
+              </div>
+            );
+          })}
 
         </div>
 
-      </div>
-
-      {/* ARROWS */}
-      <div
-        className="
-          flex
-          items-center
-          justify-center
-          gap-4
-          mt-14
-        "
-      >
-
-        {/* LEFT */}
+        {/* LEFT ARROW */}
         <button
           onClick={prevSlide}
           className="
-            w-12
-            h-12
+            absolute
+            left-1
+            md:left-2
+            top-1/2
+            -translate-y-1/2
+
+            w-9
+            h-9
+            md:w-10
+            md:h-10
+
             rounded-full
             border
             border-black
+            bg-white
+
             text-black
-            hover:bg-black
-            hover:text-white
+            text-lg
+
+            hover:border-[#F39221]
+            hover:text-[#F39221]
+            hover:bg-transparent
+
             transition-all
             duration-300
-            text-xl
+
+            z-10
           "
         >
           ←
         </button>
 
-        {/* RIGHT */}
+        {/* RIGHT ARROW */}
         <button
           onClick={nextSlide}
           className="
-            w-12
-            h-12
+            absolute
+            right-1
+            md:right-2
+            top-1/2
+            -translate-y-1/2
+
+            w-9
+            h-9
+            md:w-10
+            md:h-10
+
             rounded-full
             bg-black
             text-white
+            text-lg
+
             hover:bg-[#F39221]
+
             transition-all
             duration-300
-            text-xl
+
+            z-10
           "
         >
           →
