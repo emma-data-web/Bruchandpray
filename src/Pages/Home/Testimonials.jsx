@@ -39,7 +39,10 @@ const testimonials = [
 const Testimonials = () => {
   const [index, setIndex] = useState(0);
 
-  const cardsPerView = 2;
+  const isMobile = window.innerWidth < 768;
+
+  const cardsPerView = isMobile ? 1 : 2;
+
   const totalPages = Math.ceil(testimonials.length / cardsPerView);
 
   const next = () => {
@@ -109,7 +112,20 @@ const Testimonials = () => {
                     .map((item, i) => (
                       <div
                         key={i}
-                        className="w-1/2 bg-[#F9F9F9] rounded-xl p-5 shadow-sm flex gap-4 items-center"
+                        className={`
+                          ${
+                            cardsPerView === 1
+                              ? "w-full"
+                              : "w-1/2"
+                          }
+                          bg-[#F9F9F9]
+                          rounded-xl
+                          p-5
+                          shadow-sm
+                          flex
+                          gap-4
+                          items-center
+                        `}
                       >
 
                         {/* IMAGE */}
@@ -144,43 +160,43 @@ const Testimonials = () => {
         {/* RIGHT - BOOK (BLACK PANEL UPDATED LAYOUT) */}
         <div className="w-full lg:w-1/2 flex justify-center">
 
-  <div className="w-[90%] bg-black text-white rounded-2xl p-6 shadow-lg transform -rotate-3 origin-center transition-all duration-500 ease-in-out hover:rotate-0 hover:scale-[1.02]">
+          <div className="w-[90%] bg-black text-white rounded-2xl p-6 shadow-lg transform -rotate-3 origin-center transition-all duration-500 ease-in-out hover:rotate-0 hover:scale-[1.02]">
 
-    {/* TOP ROW: BOOK + TEXT */}
-    <div className="flex gap-5 items-start">
+            {/* TOP ROW: BOOK + TEXT */}
+            <div className="flex gap-5 items-start">
 
-      {/* BOOK IMAGE */}
-      <img
-        src={bookImg}
-        alt="book"
-        className="w-[120px] h-[170px] object-cover rounded-lg"
-      />
+              {/* BOOK IMAGE */}
+              <img
+                src={bookImg}
+                alt="book"
+                className="w-[120px] h-[170px] object-cover rounded-lg"
+              />
 
-      {/* TEXT */}
-      <div className="flex-1">
-        <h3 className="text-2xl font-semibold mb-2">
-          Book
-        </h3>
+              {/* TEXT */}
+              <div className="flex-1">
+                <h3 className="text-2xl font-semibold mb-2">
+                  Book
+                </h3>
 
-        <p className="text-white/70 leading-[1.6] text-sm">
-          The words in this book are drawn from the Bible. They are specially
-          chosen to build and inspire children to become great leaders and role models.
-        </p>
-      </div>
+                <p className="text-white/70 leading-[1.6] text-sm">
+                  The words in this book are drawn from the Bible. They are specially
+                  chosen to build and inspire children to become great leaders and role models.
+                </p>
+              </div>
 
-    </div>
+            </div>
 
-    {/* BUTTON */}
-    <div className="mt-6">
-      <button className="w-full bg-[#F39221] text-black py-3 rounded-full uppercase text-[11px] tracking-[0.2em] hover:opacity-90 transition">
-        Get Book
-      </button>
-    </div>
+            {/* BUTTON */}
+            <div className="mt-6">
+              <button className="w-full bg-[#F39221] text-black py-3 rounded-full uppercase text-[11px] tracking-[0.2em] hover:opacity-90 transition">
+                Get Book
+              </button>
+            </div>
 
-  </div>
+          </div>
 
-</div>
         </div>
+      </div>
 
     </section>
   );
