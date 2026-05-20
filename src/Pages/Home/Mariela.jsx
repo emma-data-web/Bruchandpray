@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import founderImg from "../../../src/assets/founder-pic.jpeg";
 
 const AboutFounder = () => {
@@ -208,66 +207,39 @@ const AboutFounder = () => {
             flex-wrap
           "
           >
+            {/* //link to route to instagram */}
+          <a
+  href="https://www.instagram.com/comfi4u?igsh=YzljYTk1ODg3Zg=="
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <button
+    className="
+      border
+      border-[#F39221]
 
-            <Link to="/founder">
+      text-[#F39221]
 
-              <button
-                className="
-                bg-[#F39221]
+      px-5
+      py-2.5
 
-                text-white
+      rounded-full
 
-                px-5
-                py-2.5
+      uppercase
 
-                rounded-full
+      text-[10px]
 
-                uppercase
+      tracking-[0.15em]
 
-                text-[10px]
+      hover:bg-[#F39221]
+      hover:text-white
 
-                tracking-[0.15em]
-
-                hover:opacity-90
-
-                transition
-              "
-              >
-                Learn More
-              </button>
-
-            </Link>
-
-            <Link to="/contact">
-
-              <button
-                className="
-                border
-                border-[#F39221]
-
-                text-[#F39221]
-
-                px-5
-                py-2.5
-
-                rounded-full
-
-                uppercase
-
-                text-[10px]
-
-                tracking-[0.15em]
-
-                hover:bg-[#F39221]
-                hover:text-white
-
-                transition
-              "
-              >
-                Connect
-              </button>
-
-            </Link>
+      transition
+    "
+  >
+    Connect
+  </button>
+</a>
 
           </div>
 

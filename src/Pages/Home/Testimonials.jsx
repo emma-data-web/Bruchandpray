@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import circle1 from "../../../src/assets/circle-1.png";
 import circle2 from "../../../src/assets/circle-2.png";
@@ -38,11 +39,9 @@ const testimonials = [
 
 const Testimonials = () => {
   const [index, setIndex] = useState(0);
-
+  const navigate = useNavigate();
   const isMobile = window.innerWidth < 768;
-
   const cardsPerView = isMobile ? 1 : 2;
-
   const totalPages = Math.ceil(testimonials.length / cardsPerView);
 
   const next = () => {
@@ -72,21 +71,74 @@ const Testimonials = () => {
             </p>
           </div>
 
-          {/* ARROWS */}
-          <button
-            onClick={prev}
-            className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-black text-white rounded-full hover:bg-[#F39221] transition"
-          >
-            ←
-          </button>
+      
 
-          <button
-            onClick={next}
-            className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-black text-white rounded-full hover:bg-[#F39221] transition"
-          >
-            →
-          </button>
+       {/* ARROWS (NOW CENTERED + LOWER + HOVER ORANGE) */}
 
+<button
+  onClick={prev}
+  className="
+    absolute
+    left-3
+    top-1/2
+    translate-y-6
+    -translate-y-1/2
+
+    w-10
+    h-10
+
+    bg-black
+    rounded-full
+
+    flex
+    items-center
+    justify-center
+
+    z-20
+
+    transition-all
+    duration-300
+
+    hover:bg-[#F39221]
+  "
+>
+  <span className="text-white text-3xl font-extrabold leading-none">
+    ‹
+  </span>
+</button>
+
+<button
+  onClick={next}
+  className="
+    absolute
+    right-3
+    top-1/2
+    translate-y-6
+    -translate-y-1/2
+
+    w-10
+    h-10
+
+    bg-black
+    rounded-full
+
+    flex
+    items-center
+    justify-center
+
+    z-20
+
+    transition-all
+    duration-300
+
+    hover:bg-[#F39221]
+  "
+>
+  <span className="text-white text-3xl font-extrabold leading-none">
+    ›
+  </span>
+</button>
+         
           {/* VIEWPORT */}
           <div className="overflow-hidden mt-6">
 
@@ -187,11 +239,14 @@ const Testimonials = () => {
             </div>
 
             {/* BUTTON */}
-            <div className="mt-6">
-              <button className="w-full bg-[#F39221] text-black py-3 rounded-full uppercase text-[11px] tracking-[0.2em] hover:opacity-90 transition">
-                Get Book
-              </button>
-            </div>
+           <div className="mt-6">
+  <button
+    onClick={() => navigate("/get-book")}
+    className="w-full bg-[#F39221] text-black py-3 rounded-full uppercase text-[11px] tracking-[0.2em] hover:opacity-90 transition"
+  >
+    Place an Order
+  </button>
+</div>
 
           </div>
 

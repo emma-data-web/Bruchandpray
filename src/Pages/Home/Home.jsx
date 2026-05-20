@@ -15,14 +15,28 @@ const Home = () => {
     <Layout>
       <div className="bg-[#ffffff] w-full overflow-x-hidden font-sans text-[#2e2c2b]">
         <Hero />
-        <MovingWords />
-        <Mission />   
-        <Mariela />
-         <Testimonials />
-          <PastEvents />
-         <UpcomingEvents />
-         <WhyJoinUs/>
-         <Donate />
+
+<MovingWords />
+
+<div id="mission">
+  <Mission />
+</div>
+
+<div id="founder">
+  <Mariela />
+</div>
+
+<Testimonials />
+
+<PastEvents />
+
+<UpcomingEvents />
+
+<div id="join-us">
+  <WhyJoinUs />
+</div>
+
+<Donate />
       
         </div>
       

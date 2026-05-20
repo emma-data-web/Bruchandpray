@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
 import missionImg1 from "../../../src/assets/mission1.jpeg";
 import missionImg2 from "../../../src/assets/mission2.jpeg";
@@ -53,13 +52,6 @@ const MissionSection = () => {
             >
               {showFullText ? "Show Less" : "Read More"}
             </button>
-
-            <Link to="/mission">
-              <button className="border border-[#D97706] text-[#D97706] px-5 py-2 rounded-full uppercase text-[10px] tracking-[0.2em] hover:bg-[#D97706] hover:text-white transition">
-                Visit Page
-              </button>
-            </Link>
-
           </div>
 
         </div>

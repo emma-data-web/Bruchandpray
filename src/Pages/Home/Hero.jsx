@@ -1,9 +1,10 @@
 import bgPhoto from "../../../src/assets/bg-image.jpeg";
 import bgMobPhoto from "../../../src/assets/bg-img.jpeg";
-
+import { useNavigate } from "react-router-dom";
 import AnimatedLogo from "../../components/AnimatedLogo.jsx";
 
 const Hero = () => {
+  const navigate = useNavigate();
   return (
     <section
       className="
@@ -133,31 +134,32 @@ const Hero = () => {
 
           {/* PRIMARY BUTTON */}
           <button
-            className="
-            bg-[#D97706]
-            text-white
-            px-8
-            py-4
-            rounded-full
-            uppercase
-            cursor-pointer
-            text-[11px]
-            tracking-[0.22em]
-            transition-all
-            duration-300
-            ease-in-out
-            hover:bg-[#B45309]
-            hover:-translate-y-[2px]
-            hover:shadow-lg
-            w-full
-            sm:w-auto
-          "
-          >
-            Join the Table
-          </button>
+  onClick={() => {
+    document.getElementById("join-us")?.scrollIntoView({
+      behavior: "smooth",
+    });
+  }}
+  className="
+    bg-[#D97706]
+    text-white
+    px-8
+    py-4
+    rounded-full
+    uppercase
+    text-[11px]
+    tracking-[0.22em]
+    hover:bg-[#B45309]
+    hover:-translate-y-[2px]
+    transition-all
+    w-full sm:w-auto
+  "
+>
+  Join the Table
+</button>
 
           {/* SECONDARY BUTTON */}
           <button
+          onClick={()=>navigate('/upcoming-events')}
             className="
             bg-transparent
             border

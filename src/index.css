@@ -1,4 +1,17 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Cause:wght@100..900&family=Rouge+Script&display=swap');
+
+.rouge-script-regular {
+  font-family: "Rouge Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cause-font {
+  font-family: "Cause", cursive;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
 
 body {
   font-family: 'Montserrat', sans-serif;

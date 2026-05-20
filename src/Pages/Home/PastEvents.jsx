@@ -2,6 +2,7 @@ import past1 from "../../../src/assets/mission2.jpeg";
 import past2 from "../../../src/assets/mission1.jpeg";
 import past3 from "../../../src/assets/mission3.jpeg";
 import past4 from "../../../src/assets/mission4.jpeg";
+import { useNavigate } from "react-router-dom";
 
 const pastEvents = [
   {
@@ -27,6 +28,7 @@ const pastEvents = [
 ];
 
 const PastEvents = () => {
+  const navigate = useNavigate();
   return (
     <section
       className="
@@ -112,7 +114,9 @@ const PastEvents = () => {
           {/* BUTTON */}
           <div className="mt-6">
 
-            <button className="bg-[#F39221] text-white px-6 py-3 rounded-full uppercase text-[11px] tracking-[0.2em] hover:opacity-90 transition">
+            <button 
+            onClick={()=>navigate('/past-events')}
+            className="bg-[#F39221] text-white px-6 py-3 rounded-full uppercase text-[11px] tracking-[0.2em] hover:opacity-90 transition">
               View All Past Events
             </button>
 
