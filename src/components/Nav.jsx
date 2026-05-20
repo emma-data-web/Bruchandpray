@@ -48,7 +48,7 @@ const Nav = () => {
   <div className="flex items-center justify-between">
 
     {/* LOGO LEFT */}
-    <img src={logoBlack} className="w-12 h-12" />
+    <img src={logoBlack} className="w-12 h-12"  onClick={()=>goToPage("/")}/>
 
     {/* CENTER LINKS */}
     <div className="hidden md:flex gap-10 text-[11px] font-bold tracking-[0.15em] mx-auto">

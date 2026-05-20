@@ -3,7 +3,7 @@ import bookImg from "../src/assets/book.png";
 import Footer from "./components/Footer";
 import Nav from "./components/Nav";
 
-const Book = () => {
+const GetBook = () => {
   const [open, setOpen] = useState(false);
   const [qty, setQty] = useState(1);
 
@@ -209,4 +209,4 @@ const Book = () => {
   );
 };
 
-export default Book;
+export default GetBook;

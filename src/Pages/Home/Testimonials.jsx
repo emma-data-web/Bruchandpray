@@ -1,256 +1,316 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
-import circle1 from "../../../src/assets/circle-1.png";
-import circle2 from "../../../src/assets/circle-2.png";
-import circle3 from "../../../src/assets/circle-3.png";
-import circle4 from "../../../src/assets/circle-4.png";
-import circle5 from "../../../src/assets/circle-5.png";
-
-import bookImg from "../../../src/assets/book.png";
+import person1 from "../../assets/circle-1.png";
+import person2 from "../../assets/circle-2.png";
+import person3 from "../../assets/circle-3.png";
+import person4 from "../../assets/circle-4.png";
+import person5 from "../../assets/circle-5.png";
+import person6 from "../../assets/circle-2.png";
 
 const testimonials = [
   {
-    img: circle1,
-    text: "I came exhausted and left spiritually refreshed. Brunch & Pray restored my peace and reminded me of who I am in God.",
-    name: "Sarah M.",
+    id: 1,
+    image: person1,
+    name: "Sarah Johnson",
+    role: "Community Member",
+    text: "Sisterhood helped me rediscover my confidence in God. Every gathering leaves me refreshed, encouraged, and spiritually stronger.",
   },
   {
-    img: circle2,
-    text: "Brunch & Pray helped me reconnect with God and myself. I found healing, clarity, and direction.",
-    name: "Angela K.",
+    id: 2,
+    image: person2,
+    name: "Deborah Miles",
+    role: "Conference Attendee",
+    text: "Through these programs, I found healing, purpose, and genuine friendships with women who truly support one another.",
   },
   {
-    img: circle3,
-    text: "This community reminded me that Christian womanhood can be beautiful, powerful, and deeply fulfilling.",
-    name: "Grace T.",
+    id: 3,
+    image: person3,
+    name: "Rachel Williams",
+    role: "Retreat Participant",
+    text: "I came in feeling lost, but I left with renewed faith, clarity, and a deeper understanding of who God created me to be.",
   },
   {
-    img: circle4,
-    text: "I lost my joy, but here I found not just joy again — I found family and spiritual renewal.",
-    name: "Esther L.",
+    id: 4,
+    image: person4,
+    name: "Grace Coleman",
+    role: "Bible Study Member",
+    text: "The teachings and worship experiences completely changed my spiritual walk and gave me strength during difficult moments.",
   },
   {
-    img: circle5,
-    text: "Every gathering feels like a divine encounter. My faith has grown stronger and more grounded.",
-    name: "Joy O.",
+    id: 5,
+    image: person5,
+    name: "Esther James",
+    role: "Volunteer",
+    text: "Being part of this community has shown me the beauty of serving God alongside other women filled with faith and compassion.",
+  },
+  {
+    id: 6,
+    image: person6,
+    name: "Naomi Peters",
+    role: "Event Guest",
+    text: "I experienced peace, joy, and encouragement that reminded me God still has a purpose and calling for my life.",
   },
 ];
 
 const Testimonials = () => {
-  const [index, setIndex] = useState(0);
-  const navigate = useNavigate();
-  const isMobile = window.innerWidth < 768;
-  const cardsPerView = isMobile ? 1 : 2;
-  const totalPages = Math.ceil(testimonials.length / cardsPerView);
+  const [currentPage, setCurrentPage] = useState(0);
 
-  const next = () => {
-    setIndex((prev) => (prev + 1) % totalPages);
+  const testimonialsPerPage = 3;
+
+  const totalPages = Math.ceil(
+    testimonials.length / testimonialsPerPage
+  );
+
+  const nextSlide = () => {
+    if (currentPage < totalPages - 1) {
+      setCurrentPage(currentPage + 1);
+    }
   };
 
-  const prev = () => {
-    setIndex((prev) => (prev - 1 + totalPages) % totalPages);
+  const prevSlide = () => {
+    if (currentPage > 0) {
+      setCurrentPage(currentPage - 1);
+    }
   };
 
   return (
-    <section className="w-full bg-[#FFF3E6] py-20 px-6 md:px-16">
+    <section className="w-full bg-[#FFF8F1] py-20 px-5 md:px-10 overflow-hidden">
+{/* HEADER */}
+<div className="text-center mb-14">
 
-      <div className="max-w-[1300px] mx-auto flex flex-col lg:flex-row gap-10">
+  <h2
+    className="
+      text-[#F39221]
+      text-[2.3rem]
+      sm:text-[2.7rem]
+      md:text-5xl
+      font-semibold
+      italic
+      mb-5
+    "
+  >
+    Testimonials
+  </h2>
 
-        {/* LEFT - TESTIMONIALS (WHITE PANEL) */}
-        <div className="w-full lg:w-1/2 bg-white text-black rounded-2xl p-6 relative shadow-lg">
+        <p
+          className="
+            text-[#555]
+            text-sm
+            md:text-[15px]
+            leading-[1.9]
+            max-w-[750px]
+            mx-auto
+          "
+        >
+          Hear from women whose lives have been transformed
+          through worship gatherings, mentorship, faith,
+          healing, and community experiences.
+        </p>
 
-          {/* HEADER */}
-          <div className="mb-6">
-            <h2 className="text-3xl md:text-5xl font-semibold text-black">
-              Sisterhood <span className="text-[#F39221] italic">Stories</span>
-            </h2>
+      </div>
 
-            <p className="text-black/60 mt-2">
-              Real women, real stories, real impact.
-            </p>
-          </div>
+      {/* SLIDER WRAPPER */}
+      <div className="relative w-full overflow-hidden">
 
-      
+        {/* SLIDER TRACK */}
+        <div
+          className="
+            flex
+            transition-transform
+            duration-700
+            ease-in-out
+          "
+          style={{
+            transform: `translateX(-${currentPage * 100}%)`,
+          }}
+        >
 
-       {/* ARROWS (NOW CENTERED + LOWER + HOVER ORANGE) */}
+          {Array.from({ length: totalPages }).map(
+            (_, pageIndex) => {
 
-<button
-  onClick={prev}
-  className="
-    absolute
-    left-3
-    top-1/2
-    translate-y-6
-    -translate-y-1/2
+              const start =
+                pageIndex * testimonialsPerPage;
 
-    w-10
-    h-10
+              const pageItems = testimonials.slice(
+                start,
+                start + testimonialsPerPage
+              );
 
-    bg-black
-    rounded-full
-
-    flex
-    items-center
-    justify-center
-
-    z-20
-
-    transition-all
-    duration-300
-
-    hover:bg-[#F39221]
-  "
->
-  <span className="text-white text-3xl font-extrabold leading-none">
-    ‹
-  </span>
-</button>
-
-<button
-  onClick={next}
-  className="
-    absolute
-    right-3
-    top-1/2
-    translate-y-6
-    -translate-y-1/2
-
-    w-10
-    h-10
-
-    bg-black
-    rounded-full
-
-    flex
-    items-center
-    justify-center
-
-    z-20
-
-    transition-all
-    duration-300
-
-    hover:bg-[#F39221]
-  "
->
-  <span className="text-white text-3xl font-extrabold leading-none">
-    ›
-  </span>
-</button>
-         
-          {/* VIEWPORT */}
-          <div className="overflow-hidden mt-6">
-
-            <div
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{
-                width: `${totalPages * 100}%`,
-                transform: `translateX(-${index * (100 / totalPages)}%)`,
-              }}
-            >
-
-              {Array.from({ length: totalPages }).map((_, pageIndex) => (
+              return (
                 <div
                   key={pageIndex}
-                  className="w-full flex gap-6"
+                  className="
+                    min-w-full
+                    grid
+                    grid-cols-1
+                    lg:grid-cols-3
+                    gap-8
+                  "
                 >
 
-                  {testimonials
-                    .slice(
-                      pageIndex * cardsPerView,
-                      pageIndex * cardsPerView + cardsPerView
-                    )
-                    .map((item, i) => (
-                      <div
-                        key={i}
-                        className={`
-                          ${
-                            cardsPerView === 1
-                              ? "w-full"
-                              : "w-1/2"
-                          }
-                          bg-[#F9F9F9]
-                          rounded-xl
-                          p-5
-                          shadow-sm
-                          flex
-                          gap-4
-                          items-center
-                        `}
-                      >
+                  {pageItems.map((item) => (
+                    <div
+                      key={item.id}
+                      className="
+                        bg-white
+                        rounded-[28px]
+                        overflow-hidden
+                        shadow-sm
+                        border
+                        border-[#F39221]/10
+                        hover:shadow-xl
+                        transition-all
+                        duration-300
+                      "
+                    >
 
-                        {/* IMAGE */}
-                        <img
-                          src={item.img}
-                          alt="testimonial"
-                          className="w-14 h-14 rounded-full object-cover border border-[#F39221]"
-                        />
+                      {/* CONTENT */}
+                      <div className="p-8">
+
+                        {/* TOP */}
+                        <div className="flex items-center gap-2 mb-2">
+
+                          {/* IMAGE */}
+                          <div
+                            className="
+                              w-[65px]
+                              h-[65px]
+                              rounded-full
+                              overflow-hidden
+                              flex-shrink-0
+                            "
+                          >
+
+                            <img
+                              src={item.image}
+                              alt={item.name}
+                              className="
+                                w-full
+                                h-full
+                                object-cover
+                                transition-transform
+                                duration-700
+                                hover:scale-105
+                              "
+                            />
+
+                          </div>
+
+                          {/* QUOTE */}
+                          <div
+                            className="
+                              text-[#F39221]
+                              text-5xl
+                              leading-none
+                              mt-2
+                            "
+                          >
+                            ”
+                          </div>
+
+                        </div>
 
                         {/* TEXT */}
+                        <p
+                          className="
+                            text-[#444]
+                            leading-[1.8]
+                            text-sm
+                            md:text-[15px]
+                            mb-5
+                          "
+                        >
+                          {item.text}
+                        </p>
+
+                        {/* USER */}
                         <div>
-                          <p className="text-black/80 text-sm leading-[1.5]">
-                            “{item.text}”
+
+                          <h4
+                            className="
+                              font-semibold
+                              text-black
+                              text-lg
+                            "
+                          >
+                            {item.name}
+                          </h4>
+
+                          <p
+                            className="
+                              text-[#777]
+                              text-sm
+                              mt-[1px]
+                            "
+                          >
+                            {item.role}
                           </p>
 
-                          <p className="mt-2 font-semibold text-black text-sm">
-                            {item.name}
-                          </p>
                         </div>
 
                       </div>
-                    ))}
+
+                    </div>
+                  ))}
 
                 </div>
-              ))}
-
-            </div>
-
-          </div>
-        </div>
-
-        {/* RIGHT - BOOK (BLACK PANEL UPDATED LAYOUT) */}
-        <div className="w-full lg:w-1/2 flex justify-center">
-
-          <div className="w-[90%] bg-black text-white rounded-2xl p-6 shadow-lg transform -rotate-3 origin-center transition-all duration-500 ease-in-out hover:rotate-0 hover:scale-[1.02]">
-
-            {/* TOP ROW: BOOK + TEXT */}
-            <div className="flex gap-5 items-start">
-
-              {/* BOOK IMAGE */}
-              <img
-                src={bookImg}
-                alt="book"
-                className="w-[120px] h-[170px] object-cover rounded-lg"
-              />
-
-              {/* TEXT */}
-              <div className="flex-1">
-                <h3 className="text-2xl font-semibold mb-2">
-                  Book
-                </h3>
-
-                <p className="text-white/70 leading-[1.6] text-sm">
-                  The words in this book are drawn from the Bible. They are specially
-                  chosen to build and inspire children to become great leaders and role models.
-                </p>
-              </div>
-
-            </div>
-
-            {/* BUTTON */}
-           <div className="mt-6">
-  <button
-    onClick={() => navigate("/get-book")}
-    className="w-full bg-[#F39221] text-black py-3 rounded-full uppercase text-[11px] tracking-[0.2em] hover:opacity-90 transition"
-  >
-    Place an Order
-  </button>
-</div>
-
-          </div>
+              );
+            }
+          )}
 
         </div>
+
+      </div>
+
+      {/* ARROWS */}
+      <div
+        className="
+          flex
+          items-center
+          justify-center
+          gap-4
+          mt-14
+        "
+      >
+
+        {/* LEFT */}
+        <button
+          onClick={prevSlide}
+          className="
+            w-12
+            h-12
+            rounded-full
+            border
+            border-black
+            text-black
+            hover:bg-black
+            hover:text-white
+            transition-all
+            duration-300
+            text-xl
+          "
+        >
+          ←
+        </button>
+
+        {/* RIGHT */}
+        <button
+          onClick={nextSlide}
+          className="
+            w-12
+            h-12
+            rounded-full
+            bg-black
+            text-white
+            hover:bg-[#F39221]
+            transition-all
+            duration-300
+            text-xl
+          "
+        >
+          →
+        </button>
+
       </div>
 
     </section>

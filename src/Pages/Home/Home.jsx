@@ -7,10 +7,12 @@ import UpcomingEvents from "./UpcomingEvents";
 import PastEvents from "./PastEvents";
 import MovingWords from "./MovingWords";
 import Donate from "./Donate";
+import Footer from "../../components/Footer";
 import WhyJoinUs from "./WhyJoinUs";
 
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import Book from "./Book";
 
 const Home = () => {
   const location = useLocation();
@@ -42,7 +44,7 @@ const Home = () => {
 <div id="founder">
   <Mariela />
 </div>
-
+<Book/>
 <Testimonials />
 
 <PastEvents />
@@ -54,9 +56,12 @@ const Home = () => {
 </div>
 
 <Donate />
+<Footer />
+
       
         </div>
       
+
     </Layout>
   );
 };

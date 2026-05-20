@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './Pages/Home/Home'
-import Books from './Books'
+import GetBook from './GetBook'
 import Layout from './components/layout'
 import GetTickets from './GetTickets'
 import DonateAnonymous from './DonateAnonymous'
@@ -15,7 +15,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Layout><Home /></Layout>} />
-          <Route path="/get-book" element={<Layout><Books /></Layout>} />
+          <Route path="/get-book" element={<Layout><GetBook /></Layout>} />
           <Route path="/upcoming-events" element={<Layout><GetTickets /></Layout>} />
           <Route path="/donate-anonymously" element={<Layout><DonateAnonymous /></Layout>} />
           <Route path="/donate-publicly" element={<Layout><DonatePublicly /></Layout>} />
