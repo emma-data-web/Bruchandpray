@@ -208,7 +208,7 @@ const UpcomingEvents = () => {
 
                 {/* BUTTON */}
                 <Link
-                  to="/get-tickets"
+                  to="/upcoming-events"
                   className="inline-block mt-5"
                 >
                   <button

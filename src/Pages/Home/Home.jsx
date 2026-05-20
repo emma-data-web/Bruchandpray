@@ -9,8 +9,25 @@ import MovingWords from "./MovingWords";
 import Donate from "./Donate";
 import WhyJoinUs from "./WhyJoinUs";
 
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const Home = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    const id = location.state?.scrollTo;
+
+    if (id) {
+      setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({
+          behavior: "smooth",
+        });
+      }, 300);
+    }
+  }, [location]);
+
+
   return (
     <Layout>
       <div className="bg-[#ffffff] w-full overflow-x-hidden font-sans text-[#2e2c2b]">
@@ -46,3 +63,4 @@ const Home = () => {
 
 
 export default Home;
+

@@ -1,99 +1,147 @@
-import { useNavigate, useLocation } from "react-router-dom";
 import logoBlack from "../assets/logo1.png";
 import { IoMenu, IoClose } from "react-icons/io5";
+import { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
-const Nav = ({ setMenuOpen, menuOpen }) => {
+const Nav = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
-  const scrollToSection = (id) => {
-    if (location.pathname !== "/") {
-      navigate("/");
-      setTimeout(() => {
-        document.getElementById(id)?.scrollIntoView({
-          behavior: "smooth",
-        });
-      }, 300);
-    } else {
-      document.getElementById(id)?.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
+  const closeMenu = () => setMenuOpen(false);
 
-    setMenuOpen(false);
+ const goToSection = (id) => {
+  closeMenu();
+
+  const cleanId = id.replace("#", "");
+
+  const scrollToElement = () => {
+    const el = document.getElementById(cleanId);
+    if (!el) return;
+
+    const yOffset = -90; // fixes fixed navbar overlap
+    const y =
+      el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+    window.scrollTo({ top: y, behavior: "smooth" });
+  };
+
+  if (location.pathname !== "/") {
+    navigate("/", { state: { scrollTo: cleanId } });
+
+    // wait for page load then scroll
+    setTimeout(scrollToElement, 300);
+  } else {
+    scrollToElement();
+  }
+};
+
+  const goToPage = (path) => {
+    closeMenu();
+    navigate(path);
   };
 
   return (
     <>
-      {/* DESKTOP NAV */}
-      <nav className="fixed bg-white/100 backdrop-blur-xl border border-orange-200/30 py-4 rounded-full left-1/2 -translate-x-1/2 my-4 shadow-2xl px-9 hidden lg:flex gap-12 text-[11px] text-black z-40 font-bold items-center w-[80%] justify-center">
+      <div className="fixed top-3 z-50 w-[95%] left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-xl rounded-full shadow-xl px-6 py-3">
 
-        <a href="/" className="mr-6">
-          <img src={logoBlack} className="w-12 h-10" />
-        </a>
+  <div className="flex items-center justify-between">
 
-        <button onClick={() => scrollToSection("mission")}>MISSION</button>
+    {/* LOGO LEFT */}
+    <img src={logoBlack} className="w-12 h-12" />
 
-        <a href="/get-book">BOOK</a>
+    {/* CENTER LINKS */}
+    <div className="hidden md:flex gap-10 text-[11px] font-bold tracking-[0.15em] mx-auto">
 
-        <button onClick={() => scrollToSection("founder")}>
-          ABOUT FOUNDER
-        </button>
+      <button onClick={() => goToSection("mission")}>
+        MISSION
+      </button>
 
-        <a href="/past-events">PAST EVENTS</a>
+      <button onClick={() => goToPage("/get-book")}>
+        BOOK
+      </button>
 
-        <a href="/upcoming-events">UPCOMING EVENTS</a>
+      <button onClick={() => goToSection("founder")}>
+        ABOUT FOUNDER
+      </button>
 
-      </nav>
+      <button onClick={() => goToPage("/past-events")}>
+        PAST EVENTS
+      </button>
 
-      {/* MOBILE TOP BAR */}
-      <div className="fixed top-3 px-4 text-4xl md:hidden z-50 bg-white/95 backdrop-blur-xl py-2 rounded-full flex items-center justify-between w-[95%] left-1/2 -translate-x-1/2 shadow-xl">
+      <button onClick={() => goToPage("/upcoming-events")}>
+        UPCOMING EVENTS
+      </button>
 
-        <a href="/">
-          <img src={logoBlack} className="w-12 h-12" />
-        </a>
+    </div>
 
-        <IoMenu onClick={() => setMenuOpen(true)} />
+    {/* RIGHT SPACE (balances layout) */}
+    <div className="w-12 md:w-12" />
+
+    {/* MOBILE MENU ICON */}
+    <IoMenu
+      className="text-3xl cursor-pointer md:hidden"
+      onClick={() => setMenuOpen(true)}
+    />
+
+  </div>
       </div>
 
+      {/* BACKDROP */}
+      <div
+        onClick={closeMenu}
+        className={`
+          fixed inset-0 bg-black/50 backdrop-blur-sm z-[90]
+          transition-all duration-300
+          ${menuOpen ? "opacity-100 visible" : "opacity-0 invisible"}
+        `}
+      />
+
       {/* MOBILE SIDEBAR */}
-      <div className={`fixed top-0 left-0 h-screen w-[70%] bg-[#F39221] z-[100] shadow-2xl flex flex-col px-6 py-8 transition-transform duration-500 ${
-        menuOpen ? "translate-x-0" : "-translate-x-full"
-      }`}>
+      <div
+        className={`
+          fixed top-0 left-0 h-screen w-[70%]
+          bg-black text-white z-[100]
+          transition-transform duration-500
+          ${menuOpen ? "translate-x-0" : "-translate-x-full"}
+        `}
+      >
 
-        <div className="flex justify-between mb-10">
-          <img src={logoBlack} className="w-14 h-14" />
-          <IoClose className="text-4xl text-white" onClick={() => setMenuOpen(false)} />
-        </div>
+        {/* CLOSE */}
+        <IoClose
+          className="absolute top-6 right-6 text-4xl cursor-pointer"
+          onClick={closeMenu}
+        />
 
-        <div className="flex flex-col gap-6 text-white font-semibold text-sm">
+        {/* LOGO */}
+        <img src={logoBlack} className="w-16 h-16 m-6" />
 
-          <button onClick={() => scrollToSection("mission")}>MISSION</button>
+        {/* LINKS */}
+        <div className="flex flex-col gap-6 px-6 mt-10 text-sm tracking-[0.15em]">
 
-          <a href="/get-book" onClick={() => setMenuOpen(false)}>BOOK</a>
+          <button onClick={() => goToSection("#mission")}>
+            MISSION
+          </button>
 
-          <button onClick={() => scrollToSection("founder")}>
+          <button onClick={() => goToPage("/get-book")}>
+            BOOK
+          </button>
+
+          <button onClick={() => goToSection("#founder")}>
             ABOUT FOUNDER
           </button>
 
-          <a href="/past-events" onClick={() => setMenuOpen(false)}>
+          <button onClick={() => goToPage("/past-events")}>
             PAST EVENTS
-          </a>
+          </button>
 
-          <a href="/upcoming-events" onClick={() => setMenuOpen(false)}>
+          <button onClick={() => goToPage("/upcoming-events")}>
             UPCOMING EVENTS
-          </a>
+          </button>
 
         </div>
-      </div>
 
-      {/* BACKDROP ALWAYS WORKS */}
-      {menuOpen && (
-        <div
-          onClick={() => setMenuOpen(false)}
-          className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[90]"
-        />
-      )}
+      </div>
     </>
   );
 };
