@@ -51,13 +51,13 @@ export default function DonationSection() {
               text-black
               text-2xl
               sm:text-3xl
-              md:text-[2.5rem]
-              font-bold
+              md:text-[2.25rem]
+              font-medium
               leading-[1.25]
               mb-5
             "
           >
-            <span className="rouge-script-regular">
+            <span >
               Help us continue creating spaces where women encounter God.
             </span>
           </h2>
