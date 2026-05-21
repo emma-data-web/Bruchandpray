@@ -8,23 +8,21 @@ import DonatePublicly from './DonatePublicly'
 import PastEventPage from './Pages/Home/PastEventPage'
 // import Footer from './Pages/footer'
 
+import ScrollToTop from "./ScrollToTop";
+
 function App() {
-
   return (
-    <>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Layout><Home /></Layout>} />
-          <Route path="/get-book" element={<Layout><GetBook /></Layout>} />
-          <Route path="/upcoming-events" element={<Layout><GetTickets /></Layout>} />
-          <Route path="/donate-anonymously" element={<Layout><DonateAnonymous /></Layout>} />
-          <Route path="/donate-publicly" element={<Layout><DonatePublicly /></Layout>} />
-          <Route path="/past-events" element={<Layout><PastEventPage /></Layout>} />
-        </Routes>
-      </Router>
-  
-    </>
-  )
+    <Router>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Layout><Home /></Layout>} />
+        <Route path="/get-book" element={<Layout><GetBook /></Layout>} />
+        <Route path="/upcoming-events" element={<Layout><GetTickets /></Layout>} />
+        <Route path="/donate-anonymously" element={<Layout><DonateAnonymous /></Layout>} />
+        <Route path="/donate-publicly" element={<Layout><DonatePublicly /></Layout>} />
+        <Route path="/past-events" element={<Layout><PastEventPage /></Layout>} />
+      </Routes>
+    </Router>
+  );
 }
-
 export default App
