@@ -89,6 +89,7 @@ export default function DonationSection() {
               gap-4
             "
           >
+            
 
             {/* FILLED ORANGE BUTTON */}
             <button
@@ -112,10 +113,9 @@ export default function DonationSection() {
                 sm:w-auto
               "
             >
-              Donate Anonymously
+              Give
             </button>
-
-            {/* ORANGE OUTLINE BUTTON */}
+              {/* ORANGE OUTLINE BUTTON */}
             <button
               onClick={() => navigate("/donate-publicly")}
               className="
@@ -142,15 +142,11 @@ export default function DonationSection() {
                 sm:w-auto
               "
             >
-              Donate Publicly
+              Give Anonymously
             </button>
-
           </div>
-
         </div>
-
       </div>
-
     </section>
   );
 }

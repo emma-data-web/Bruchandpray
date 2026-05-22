@@ -57,7 +57,7 @@ const Nav = () => {
         MISSION
       </button>
 
-      <button onClick={() => goToPage("/get-book")}>
+      <button onClick={() => goToSection("#book")}>
         BOOK
       </button>
 
@@ -123,11 +123,11 @@ const Nav = () => {
             MISSION
           </button>
 
-          <button onClick={() => goToPage("/get-book")}>
+          <button onClick={() => goToSection("book")}>
             BOOK
           </button>
 
-          <button onClick={() => goToSection("#founder")}>
+          <button onClick={() => goToSection("founder")}>
             ABOUT FOUNDER
           </button>
 

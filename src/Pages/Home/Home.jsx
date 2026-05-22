@@ -1,7 +1,7 @@
 import Layout from "../../components/layout";
 import Hero from "./Hero";
 import Mariela from "./Mariela";
-import Mission from "./Mision"; 
+import Mission from "./Mision";
 import Testimonials from "./Testimonials";
 import UpcomingEvents from "./UpcomingEvents";
 import PastEvents from "./PastEvents";
@@ -29,43 +29,38 @@ const Home = () => {
     }
   }, [location]);
 
-
   return (
     <Layout>
       <div className="bg-[#ffffff] w-full overflow-x-hidden font-sans text-[#2e2c2b]">
         <Hero />
 
-<MovingWords />
+        <MovingWords />
 
-<div id="mission">
-  <Mission />
-</div>
-
-<div id="founder">
-  <Mariela />
-</div>
-<Book/>
-<Testimonials />
-
-<PastEvents />
-
-<UpcomingEvents />
-
-<div id="join-us">
-  <WhyJoinUs />
-</div>
-
-<Donate />
-<Footer />
-
-      
+        <div id="mission">
+          <Mission />
         </div>
-      
 
+        <div id="founder">
+          <Mariela />
+        </div>
+        <div id="book">
+          <Book />
+        </div>
+        <Testimonials />
+
+        <PastEvents />
+
+        <UpcomingEvents />
+
+        <div id="join-us">
+          <WhyJoinUs />
+        </div>
+
+        <Donate />
+        <Footer />
+      </div>
     </Layout>
   );
 };
 
-
 export default Home;
-
