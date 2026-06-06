@@ -36,7 +36,7 @@ const GetBook = () => {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:5000/api/stripe/create-checkout-session", {
+      const res = await fetch("https://brunchandpray.com/api/stripe/create-checkout-session", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
