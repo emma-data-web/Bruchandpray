@@ -10,11 +10,62 @@ const GetBook = () => {
   const [open, setOpen] = useState(false);
   const [qty, setQty] = useState(1);
 
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    deliveryAddress: "",
+    contact: "",
+  });
+
   const title = bookData?.title || "I Know Who I Am";
   const author = bookData?.author || "By Uwa Comfort Azubuike";
   const image = bookData?.image;
   const pricePerBook = bookData?.price || 10;
   const total = qty * pricePerBook;
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await fetch("http://localhost:5000/api/stripe/create-checkout-session", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          title,
+          author,
+          image,
+          price: pricePerBook,
+          quantity: qty,
+          name: formData.name,
+          email: formData.email,
+          deliveryAddress: formData.deliveryAddress,
+          contact: formData.contact,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Unable to start checkout");
+      }
+
+      window.location.href = data.url;
+    } catch (error) {
+      console.error(error);
+      alert("Checkout failed. Please try again.");
+    }
+  };
 
   return (
     <>
@@ -91,13 +142,16 @@ const GetBook = () => {
               </button>
             </div>
 
-            <form className="flex flex-col gap-5">
+            <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
               <div className="flex flex-col gap-1">
                 <label className="text-xs text-gray-500 uppercase tracking-wider">
                   Your Name
                 </label>
                 <input
                   type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   placeholder="Enter your full name"
                   className="border p-3 rounded-lg outline-none focus:border-[#F39221]"
                   required
@@ -110,6 +164,9 @@ const GetBook = () => {
                 </label>
                 <input
                   type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   placeholder="Enter your email address"
                   className="border p-3 rounded-lg outline-none focus:border-[#F39221]"
                   required
@@ -122,6 +179,9 @@ const GetBook = () => {
                 </label>
                 <input
                   type="text"
+                  name="deliveryAddress"
+                  value={formData.deliveryAddress}
+                  onChange={handleChange}
                   placeholder="Enter your delivery address"
                   className="border p-3 rounded-lg outline-none focus:border-[#F39221]"
                   required
@@ -130,10 +190,13 @@ const GetBook = () => {
 
               <div className="flex flex-col gap-1">
                 <label className="text-xs text-gray-500 uppercase tracking-wider">
-                  Phone Number (Optional)
+                  Phone Number / Contact
                 </label>
                 <input
                   type="tel"
+                  name="contact"
+                  value={formData.contact}
+                  onChange={handleChange}
                   placeholder="Enter your phone number"
                   className="border p-3 rounded-lg outline-none focus:border-[#F39221]"
                 />

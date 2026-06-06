@@ -56,34 +56,15 @@ const Book = () => {
   const prevPage = () =>
     setPage((p) => (p === 0 ? totalPages - 1 : p - 1));
 
-  //checkout handler
-  const handleCheckout = async (book) => {
-    try {
-      const res = await fetch("http://localhost:5000/api/stripe/create-checkout-session", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          title: book.title,
-          author: book.author,
-          image: book.image,
-          price: book.price,
-          quantity: 1,
-        }),
-      });
-
-      const data = await res.json();
-
-      if (!res.ok) {
-        throw new Error(data.error || "Unable to start checkout");
-      }
-
-      window.location.href = data.url;
-    } catch (error) {
-      console.error(error);
-      alert("Checkout failed. Please try again.");
-    }
+  const handleCheckout = (book) => {
+    navigate("/get-book", {
+      state: {
+        title: book.title,
+        author: book.author,
+        image: book.image,
+        price: book.price,
+      },
+    });
   };
 
   return (
@@ -149,7 +130,7 @@ const Book = () => {
                     hover:bg-[#F39221] hover:text-white
                   "
                 >
-                  Place Order
+                  Get Book
                 </button>
               </div>
             </div>
