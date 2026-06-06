@@ -4,6 +4,8 @@ import GetBook from './GetBook'
 import Layout from './components/layout'
 import GetTickets from './GetTickets'
 import DonateAnonymous from './DonateAnonymous'
+import PaymentSuccess from './Pages/Home/PaymentSuccess'
+import PaymentFailure from './Pages/Home/PaymentFailure'
 import DonatePublicly from './DonatePublicly'
 import PastEventPage from './Pages/Home/PastEventPage'
 // import Footer from './Pages/footer'
@@ -21,6 +23,9 @@ function App() {
         <Route path="/donate-anonymously" element={<Layout><DonateAnonymous /></Layout>} />
         <Route path="/donate-publicly" element={<Layout><DonatePublicly /></Layout>} />
         <Route path="/past-events" element={<Layout><PastEventPage /></Layout>} />
+        <Route path="/payment-success" element={<Layout><PaymentSuccess /></Layout>} />
+        <Route path="/payment-failure" element={<Layout><PaymentFailure /></Layout>} />
+        <Route path="*" element={<Layout><Home /></Layout>} />
       </Routes>
     </Router>
   );
